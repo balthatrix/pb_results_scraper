@@ -3,7 +3,9 @@
 
 ### Getting Started
 $`git clone https://github.com/balthatrix/pb_results_scraper`
+
 $`cd pb_results_scraper`
+
 $`bundle install`
 
 ### Parsing a Tourney Webpage
