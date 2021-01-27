@@ -1,0 +1,5933 @@
+/********* General *********/
+/********* JR ADDED 20190628 *********/
+.btn-registration {
+    width: 100% !important;
+    border-radius: 50px;
+    padding: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.sidemenu {
+    color: black;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+}
+
+    .tooltip .tooltiptext {
+        font-size: 12px;
+        visibility: hidden;
+        width: 240px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -120px;
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #000 transparent transparent transparent;
+        }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+h2 {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+}
+
+.btn-primary {
+    background: #4169E1;
+    border-radius: 250px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid #4169E1;
+    /* border-radius: 250px; */
+    /*   width: 300px;*/
+    margin: 0 auto;
+    padding: 16px 10px;
+    /* background: #121E40; */
+    display: block;
+}
+
+    .btn-primary:hover {
+        background: #E5E5E5;
+        border: 1px solid #707A8A;
+        color: #707A8A;
+    }
+
+.btn-secondary {
+    background: #0E1E3F;
+    border-radius: 250px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #0E1E3F;
+    margin: 0 auto;
+    padding: 16px 10px;
+}
+
+    .btn-secondary:hover {
+        background: #6e788b;
+        border: 1px solid #0E1E3F;
+    }
+
+.btn-info {
+    background: #4169E1;
+    border-radius: 250px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-cancel {
+    background: #FF013F;
+    border-radius: 250px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid #FF013F;
+    /* border-radius: 250px; */
+    /*   width: 300px;*/
+    margin: 0 auto;
+    padding: 16px 10px;
+    /* background: #121E40; */
+    display: block;
+}
+
+    .btn-cancel:hover {
+        background: #ffb2c4;
+        border: 1px solid #FF013F;
+        color: #FF013F;
+    }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1360px;
+    }
+}
+
+
+/********* Navigation *********/
+
+.nav-logo {
+    max-width: 70px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: .1em;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #121E40;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: .1em;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #4169E1;
+    background: white;
+    border: 1px solid #4169E1;
+    border-radius: 0;
+    padding: 10px 12px;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #4169E1;
+}
+
+.navbar-collapse {
+    text-align: right;
+}
+
+.navbar-toggler {
+    max-width: 45px;
+}
+
+.right-navigation .form-group{
+	margin-bottom: 6px !important;
+}
+​
+.right-navigation .col-sm-5{
+    display: inline-block !important;
+    margin-top: 5px !important;
+}
+
+/********* Doubleheader *********/
+
+.bg-lightblue {
+    background: #4169E1;
+    padding: 0px;
+}
+
+.doubleheader .row {
+    width: 100%;
+}
+
+.doubleheader p {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+    .doubleheader p a {
+        color: #fff;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+    }
+
+.doubleheader .fas {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 13px;
+}
+
+.doubleheader span {
+    display: inline-block;
+    height: auto;
+    padding-top: 0px;
+    padding-left: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.doubleheader .column1 {
+    text-align: left;
+    padding-left: 40px;
+}
+
+.doubleheader .column2 {
+    text-align: center;
+    padding: 0;
+}
+
+.doubleheader .column3 {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.doubleheader .column2 p {
+    margin: 10px 0px 10px 0px;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.doubleheader .link1 {
+    display: inline;
+}
+
+.doubleheader .link2 {
+    display: inline;
+    padding-left: 20px;
+}
+
+.doubleheader .link3 {
+    display: inline;
+    padding-left: 20px;
+}
+
+.doubleheader .column3 .link1, .doubleheader .column3 .link2 {
+    display: none;
+}
+
+/********* Start Doubleheader Navigation Mobile *********/
+
+@media (max-width: 926px) {
+
+    .doubleheader .column2 p {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 769px) {
+
+    .doubleheader .column3 {
+        text-align: center;
+        padding: 0px 0px 10px 0px;
+    }
+
+        .doubleheader .column3 .link1, .doubleheader .column3 .link2 {
+            display: inline;
+        }
+
+    .doubleheader .column1, .doubleheader .column2 {
+        display: none;
+    }
+
+    .tournament-list .tags img {
+        max-width: 50%;
+    }
+}
+
+/********* End Doubleheader Navigation Mobile *********/
+
+
+/********* Tournament Icon Bar *********/
+
+
+.tournamentbar h2 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.tournamentbar .icon {
+    max-width: 70px;
+}
+
+.tournamentbar span {
+    display: inline-block;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.tournamentbar .row {
+}
+
+hr {
+    border: none;
+    border-top: 2px dotted #121E40;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 20%;
+}
+
+.centerbuttons {
+    text-align: center;
+}
+
+.bg-blue {
+    background: #121E40;
+    padding: 20px;
+}
+
+    .bg-blue h2 {
+        color: #fff;
+        letter-spacing: .05em;
+    }
+
+    .bg-blue p a {
+        color: #4169E1;
+    }
+
+.fa-long-arrow-right {
+    font-weight: 700 !important;
+    padding-left: 10px;
+}
+
+.tournamentbar {
+}
+
+/********* Start Blue Bar Mobile *********/
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .tournamentbar .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1056px) {
+
+    .tournamentbar .icon {
+        max-width: 50px;
+    }
+}
+
+@media (max-width: 996px) {
+
+    .tournamentbar .icon {
+        max-width: 60px;
+        display: block;
+        margin: 0 auto;
+        max-height: 60px;
+    }
+
+    .tournamentbar span {
+        padding: 20px 0px 0px 0px;
+        text-align: center;
+    }
+}
+
+/********* End Blue Bar Mobile *********/
+
+
+/********* Sponsored *********/
+
+.sponsored {
+    padding: 100px;
+    background: white;
+}
+
+    .sponsored h2 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 32px;
+        letter-spacing: 1px;
+        color: #121E40;
+    }
+
+.dotted-line {
+    color: #4169E1;
+    padding: 0px 0px 30px 0px;
+    letter-spacing: 5px;
+    font-size: 30px;
+    line-height: 10px;
+}
+
+/********* Start Sponsored Mobile *********/
+
+@media (max-width: 769px) {
+
+    .oursponsors {
+        text-align: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .sponsors .col-md-2 {
+        text-align: center;
+        width: 50%;
+        padding: 20px;
+    }
+
+        .sponsors .col-md-2:last-child {
+            text-align: center !important;
+            width: 100% !important;
+        }
+}
+
+/********* End Sponsored Mobile *********/
+
+/********* Start Marketplace Styling *******/
+
+.adlisting {
+    background-color: lightgrey;
+    border-bottom: 4px solid black;
+    border: 4px solid black;
+}
+
+/********* Footer *********/
+
+.footer {
+    padding: 60px 40px 0px 40px;
+}
+
+    .footer h4 {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: 'Fjalla One', sans-serif;
+    }
+
+    .footer ul {
+        padding: 0;
+    }
+
+        .footer ul li {
+            color: #fff;
+            font-size: 12px;
+            list-style: none;
+        }
+
+    .footer p {
+    }
+
+
+    .footer .logo {
+        max-width: 70px;
+    }
+
+
+.disclaimer {
+    margin-top: 50px;
+}
+
+    .disclaimer p {
+        color: #fff;
+        font-size: 12px;
+        border: 1px solid;
+        padding: 10px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+.copyright {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 50px;
+}
+
+    .copyright p {
+        display: inline;
+    }
+
+    .copyright .text-left {
+        float: left;
+    }
+
+    .copyright .text-right {
+        float: right;
+    }
+
+/********* Start Footer Mobile *********/
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .footer .container {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 769px) {
+
+    .copyright .text-left, .copyright .text-right {
+        float: none;
+        text-align: center !important;
+        width: 100%;
+        display: block;
+    }
+
+    .footer .logocontainer {
+        padding-bottom: 50px;
+    }
+}
+
+
+@media (max-width: 769px) {
+
+
+    .footer .row {
+        text-align: center;
+    }
+}
+
+
+
+/********* End Footer Mobile *********/
+
+
+/********* Header Diagonal Image *********/
+
+
+.hero-image.is-visible .hero__white {
+    opacity: 0;
+}
+
+.hero > .container {
+    position: relative;
+    z-index: 1;
+    padding-top: 12%;
+    padding-bottom: 12%;
+}
+
+.hero-image {
+    width: 1310px;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: calc(50% - 350px);
+    background-image: url('http://www2.philly.com/resizer/6yE--280PynWbAi8H8ys7tKcGZw=/1400x932/center/middle/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/J37H7IQJ6NEPTAI4B35LKQMV7U.jpg');
+}
+
+.hero h1 {
+    font-family: 'Fjalla One', sans-serif;
+    color: #121E40;
+}
+
+.hero h2 {
+    color: #4169E1;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    letter-spacing: .05em;
+}
+
+.btn-home {
+    padding: .7rem 1.8rem;
+    margin-top: 20px;
+    letter-spacing: .07em;
+}
+
+.blueblock-1 {
+    fill: rgba(65,105,255,0.4);
+}
+
+.blueblock-2 {
+    fill: rgba(65,105,255,0.5);
+}
+
+.blueblock-3 {
+    fill: rgba(18,30,64,0.8);
+}
+
+.blueblock-4 {
+    fill: rgba(65,105,255,0.75);
+}
+
+.blueblock-5 {
+    fill: rgba(65,105,255,0.65);
+}
+
+.blueblock-6 {
+    fill: rgba(65,105,255,0.5);
+}
+
+.blueblock-7 {
+    fill: rgba(65,105,255,0.5);
+}
+
+
+/********* Sponsors *********/
+
+.sponsors {
+    padding: 50px;
+    background: white;
+}
+
+    .sponsors h3 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: #121E40;
+    }
+
+    .sponsors img {
+        max-height: 100px;
+    }
+
+    .sponsors span {
+        text-align: center;
+        height: 100%;
+        display: grid;
+        margin: 0;
+        place-items: center center;
+    }
+
+    .sponsors .col-md-2 {
+        text-align: center;
+    }
+
+        .sponsors .col-md-2:first-child {
+            text-align: left;
+        }
+
+/********* tournament-list *********/
+
+.containerwrap {
+    background: #fff;
+}
+
+.static-page {
+    margin-top: 20px;
+}
+
+.tournament-list {
+    padding: 0px 40px;
+    background: white;
+}
+
+    .tournament-list .row {
+        border-bottom: 1px solid #ddd;
+        padding: 30px 0px 35px 0px;
+    }
+
+.tournament-tabs .row:first-child {
+    border-bottom: 1px solid #ddd;
+    padding: 0px 0px 35px 0px;
+}
+
+.tournament-tabs .row:last-child {
+    border-bottom: 0px solid #ddd;
+}
+
+.tournament-list .row:last-child {
+    padding-bottom: 40px;
+    border-bottom: 0px solid #ddd;
+}
+
+.tournament-list .info {
+    font: 0/0 a; /* remove the gap between inline(-block) elements */
+}
+
+    .tournament-list .info:before { /* create a full-height inline block pseudo-element */
+        content: ' ';
+        display: inline-block;
+        vertical-align: middle; /* vertical alignment of the inline element */
+        height: 100%;
+    }
+
+    .tournament-list .info .infocenter {
+        display: inline-block;
+        vertical-align: middle;
+        font: 16px/1 Arial, sans-serif; /* reset the font property */
+        width: 100%;
+    }
+
+    .tournament-list .info span {
+        text-align: left;
+        height: 100%;
+        display: grid;
+        margin: 0;
+        place-items: center center;
+    }
+
+    .tournament-list .info h3 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: #121E40;
+    }
+
+        /*.tournament-list .info h3 a{
+color: #4169E1;
+}*/
+
+        .tournament-list .info h3 a {
+            color: #4169E1;
+            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+        }
+
+    .tournament-list .info p {
+        margin-bottom: 2px;
+    }
+
+        .tournament-list .info p:last-child {
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+
+.tournament-list .dates p {
+    margin: 0;
+}
+
+.tournament-list .logos {
+    text-align: center;
+}
+
+    .tournament-list .logos img {
+        max-height: 120px;
+        max-width: 120px;
+    }
+
+    .tournament-list .logos span {
+        text-align: center;
+        height: 100%;
+        display: grid;
+        margin: 0;
+        place-items: center center;
+    }
+
+.tournament-list .dates {
+}
+
+    .tournament-list .dates .fal {
+        margin-right: 5px;
+    }
+
+
+
+.tournament-list .tags {
+    font: 0/0 a; /* remove the gap between inline(-block) elements */
+    text-align: center;
+}
+
+    .tournament-list .tags:before { /* create a full-height inline block pseudo-element */
+        content: ' ';
+        display: inline-block;
+        vertical-align: middle; /* vertical alignment of the inline element */
+        height: 100%;
+    }
+
+    .tournament-list .tags .tagscenter {
+        display: inline-block;
+        vertical-align: middle;
+        font: 16px/1 Arial, sans-serif; /* reset the font property */
+    }
+
+    .tournament-list .tags span {
+        color: #4169E1;
+        border: 2px solid;
+        padding: 10px 15px;
+        border-radius: 250px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+        font-size: 12px;
+    }
+
+    .tournament-list .tags img {
+        /*width: 60%;*/
+        margin-bottom: 10px;
+    }
+
+
+
+.tournament-list .registration {
+    font: 0/0 a; /* remove the gap between inline(-block) elements */
+}
+
+    .tournament-list .registration:before { /* create a full-height inline block pseudo-element */
+        content: ' ';
+        display: inline-block;
+        vertical-align: middle; /* vertical alignment of the inline element */
+        height: 100%;
+    }
+
+    .tournament-list .registration span {
+        display: inline-block;
+        vertical-align: middle;
+        font: 16px/1 Arial, sans-serif; /* reset the font property */
+        /* border: 2px solid;*/
+        padding-top: 10px;
+        width: 100%;
+    }
+
+        .tournament-list .registration span p:first-child {
+            margin-bottom: 20px;
+        }
+
+    .tournament-list .registration p {
+        margin: 0px;
+    }
+
+    .tournament-list .registration .open {
+        color: #00C176;
+        margin-bottom: 10px;
+    }
+
+    .tournament-list .registration .fa-plus {
+        margin-right: 10px;
+        color: #fff;
+        background: #00C176;
+        border-radius: 250px;
+        padding: 8px 10px;
+    }
+
+    .tournament-list .registration .closed {
+        color: #FF003C;
+    }
+
+    .tournament-list .registration .fa-times {
+        margin-right: 10px;
+        color: #fff;
+        background: #FF003C;
+        border-radius: 250px;
+        padding: 8px 11px;
+    }
+
+    .tournament-list .registration .soon {
+        color: #446DDE;
+        margin-bottom: 10px;
+    }
+
+    .tournament-list .registration .closedpayonly {
+        color: #FF003C;
+    }
+
+    .tournament-list .registration .fa-clock {
+        margin-right: 10px;
+        color: #fff;
+        background: #446DDE;
+        border-radius: 250px;
+        padding: 8px 8px;
+    }
+
+    .tournament-list .registration .soon-date {
+        color: #446DDE;
+        font-size: 14px;
+        border: 0px solid #446DDE;
+        text-align: center;
+        padding: 10px;
+        line-height: 16px;
+        margin: 0 !important;
+        letter-spacing: .5px;
+        border-radius: 250px;
+    }
+
+    .tournament-list .registration .registernow {
+        color: #00C176;
+        font-size: 14px;
+        border: 0px solid #00C176;
+        text-align: center;
+        padding: 10px;
+        line-height: 16px;
+        margin: 0 !important;
+        letter-spacing: .5px;
+        border-radius: 250px;
+    }
+
+
+.opennow span {
+    /*border:2px solid #00C176 !important;*/
+}
+
+.opennow p a {
+    color: #00C176 !important;
+    border: 1px solid #00C176;
+    border-radius: 250px;
+    padding: 16px 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+    .opennow p a:hover {
+        background: rgba(83, 189, 125, 0.3);
+        border: 1px solid #53BD7D;
+        text-decoration: none;
+    }
+
+.closednow span {
+    /*border:2px solid #FF003C !important;*/
+}
+
+.closednow p a {
+    color: #FF003C !important;
+    border: 1px solid #FF003C;
+    border-radius: 250px;
+    padding: 16px 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+    .closednow p a:hover {
+        background: rgba(255, 0, 60, 0.3);
+        border: 1px solid #FF003C;
+        text-decoration: none;
+    }
+
+.closednow p:last-child {
+    /* background: #fff !important;*/
+    border: 0px solid #FF003C !important;
+    color: #FF003C !important;
+}
+
+.closedpayonlynow p a {
+    color: #00C176 !important;
+    border: 1px solid #00C176;
+    border-radius: 250px;
+    padding: 16px 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+    .closedpayonlynow p a:hover {
+        background: rgba(83, 189, 125, 0.3);
+        border: 1px solid #53BD7D;
+        text-decoration: none;
+    }
+
+
+.soon a {
+    color: #446DDE !important;
+    border: 1px solid #446DDE;
+    border-radius: 250px;
+    padding: 16px 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+    .soon a:hover {
+        background: #E5E5E5;
+        border: 1px solid #446DDE;
+        text-decoration: none;
+    }
+
+
+.vcenter {
+    height: 100%;
+    display: grid;
+    margin: 0;
+    place-items: center center;
+}
+
+.moreinfo {
+    text-align: center;
+}
+
+    .moreinfo p a {
+        color: #4169E1;
+        border: 2px solid;
+        padding: 10px 15px;
+        border-radius: 250px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+        font-size: 12px;
+    }
+
+.linebreak {
+    border-top: 1px solid #ddd;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+}
+
+.registration {
+    text-align: center;
+}
+
+.tournamentnav a {
+    color: #4169E1;
+}
+
+
+
+
+
+/********* Start Tournament List Mobile *********/
+
+
+
+@media (max-width: 1200px) {
+
+    .tournament-list {
+        max-width: 100%;
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 984px) {
+
+    .tournamentnav, .searchsidebar {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .tournamentnav .nav-pills .nav-link {
+        border: 1px solid #ddd;
+        margin: 5px;
+    }
+
+    .navtop {
+        margin-top: 0px !important;
+    }
+}
+
+@media (max-width: 769px) {
+
+    .tournamentnav {
+        text-align: center;
+    }
+
+    .tournament-list .info {
+        margin-bottom: 20px;
+    }
+
+    .tab-content {
+        padding-right: 0px !important;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .tab-content {
+        margin-top: 40px;
+        padding-right: 0px;
+        text-align: center;
+    }
+
+    .tournament-list .logos {
+        text-align: center;
+        margin: 15px;
+    }
+}
+
+/********* End Tournament List Mobile *********/
+
+
+
+
+
+/********* tournament nav *********/
+
+
+.tournamentnav {
+}
+
+    .tournamentnav .active {
+        color: #4169E1 !important;
+        border-bottom: 0px solid;
+    }
+
+    .tournamentnav .nav-item a {
+        color: #121E40;
+    }
+
+        .tournamentnav .nav-item a:hover {
+            color: #121E40 !important;
+        }
+
+.navbar-tournament {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tournamentfilter {
+    text-align: right;
+}
+
+    .tournamentfilter .filterby {
+        display: inline-block;
+    }
+
+
+    .tournamentfilter .btn-group {
+        display: inline-block;
+    }
+
+
+/********* jumbotron *********/
+
+.jumbotron {
+    text-align: center;
+    color: white;
+    padding: 0;
+    background-size: cover;
+    background: url('/pbt/img/ptimg_blue.png');
+}
+
+    .jumbotron .overlay {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        background: -webkit-linear-gradient(rgba(18,30,64, .5), rgba(68,109,222, .4));
+        background: linear-gradient(rgba(18,30,64, .5), rgba(68,109,222, .4));
+        ;
+        padding: 80px 0px;
+    }
+
+/********* Start Jumbotron Mobile *********/
+
+
+@media (max-width: 769px) {
+
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .jumbotron .overlay {
+        padding: 25px 0px 20px 0px;
+    }
+}
+
+
+/********* End Jumbotron Mobile *********/
+
+
+/********* tournament details page *********/
+
+.tournament-logo {
+    height: 145px; /* equals max image height */
+    width: 160px;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1em 0;
+    /*background: white;*/
+}
+
+    .tournament-logo a {
+        background: white;
+        display: inline-block;
+    }
+
+    .tournament-logo img {
+        vertical-align: middle;
+        max-height: 145px;
+        max-width: 160px;
+        float: none;
+        padding: 10px;
+    }
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.tournament-details-header {
+    padding: 40px 0px !important;
+}
+
+    .tournament-details-header .tournament-info {
+        font: 0/0 a; /* remove the gap between inline(-block) elements */
+    }
+
+        .tournament-details-header .tournament-info:before { /* create a full-height inline block pseudo-element */
+            content: ' ';
+            display: inline-block;
+            vertical-align: middle; /* vertical alignment of the inline element */
+            height: 100%;
+        }
+
+        .tournament-details-header .tournament-info .infocenter {
+            display: inline-block;
+            vertical-align: middle;
+            font: 16px/1 Arial, sans-serif; /* reset the font property */
+            text-align: left;
+        }
+
+        .tournament-details-header .tournament-info span {
+            text-align: left;
+            height: 100%;
+            display: grid;
+            margin: 0;
+            place-items: center center;
+        }
+
+        .tournament-details-header .tournament-info h3 {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 22px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .tournament-details-header .tournament-info p {
+            font-size: 24px;
+        }
+
+.fa-calendar-alt {
+    margin-right: 5px;
+}
+
+.registration-box {
+    background: white;
+}
+
+
+.tournament-details-header .registration-box {
+    font: 0/0 a; /* remove the gap between inline(-block) elements */
+    margin: 0;
+    padding: 0;
+}
+
+    .tournament-details-header .registration-box:before { /* create a full-height inline block pseudo-element */
+        content: ' ';
+        display: inline-block;
+        vertical-align: middle; /* vertical alignment of the inline element */
+        height: 100%;
+    }
+
+    .tournament-details-header .registration-box .row {
+        display: inline-block;
+        vertical-align: middle;
+        font: 16px/1 Arial, sans-serif; /* reset the font property */
+        text-align: left;
+        width: 100%;
+    }
+
+    .tournament-details-header .registration-box .registrationwrap {
+        text-align: left;
+        height: 100%;
+        display: inline-flex;
+        margin: 0;
+        place-items: center center;
+        width: 100%;
+    }
+
+    .tournament-details-header .registration-box h3 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 26px;
+        letter-spacing: 1px;
+        color: #00C176;
+        text-align: center;
+    }
+
+    .tournament-details-header .registration-box p {
+        color: #212529;
+        text-align: center;
+    }
+
+.register-here {
+    display: inline-block;
+    vertical-align: middle;
+    font: 16px/1 Arial, sans-serif;
+    text-align: left;
+}
+
+.registration-wrap {
+    background: red;
+}
+
+.registerbtn {
+    background: #00C176;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+    .registerbtn p {
+        margin: 20px;
+    }
+
+    .registerbtn a {
+        color: white;
+        font-size: 20px;
+    }
+
+
+.playercount {
+    background: #446DDE;
+    float: right;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    border-radius: 250px;
+    height: 100px;
+    width: 100px;
+}
+
+.registration-wrap span {
+    float: left;
+}
+
+.outer {
+    align-items: center;
+    /* display: flex; */
+    height: 100px;
+    justify-content: center;
+    max-width: 100%;
+    overflow: auto;
+    padding: 5px;
+    /*    resize: both;*/
+    font: 0/0 a;
+    display: block;
+}
+
+svg {
+    height: 100%;
+}
+
+circle {
+    fill: #00C176;
+}
+
+    .closed-circle {
+        fill: #FF003C;
+    }
+
+text {
+    fill: #fff;
+    font-size: 4rem;
+    font-family: sans-serif;
+}
+
+/********* tournament sponsors *********/
+
+.tournament-sponsors {
+    border: 2px solid #446DDE;
+    text-align: center;
+}
+
+    .tournament-sponsors p {
+        text-align: center;
+        background: #446DDE;
+        color: white;
+        padding: 20px;
+        margin-bottom: 0px;
+        font-size: 20px;
+        font-weight: 200;
+        letter-spacing: 1px;
+    }
+
+    .tournament-sponsors img {
+        padding: 20px;
+        max-width: 200px;
+    }
+
+
+
+
+.tournament-info-nav {
+    margin-bottom: 30px;
+}
+
+.tournament-details h3 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 1px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.tournament-details p {
+    color: #212529;
+}
+
+.tournament-details .info {
+    margin-bottom: 20px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff !important;
+    background-color: #4169E1;
+}
+
+/********* details page *********/
+
+.details-page {
+    margin-bottom: 0px !important;
+}
+
+
+
+
+/********* tournament details tabbed navigation *********/
+
+
+.navtop {
+    margin-top: 20px;
+}
+
+.tab-content {
+    margin-top: 40px;
+    padding-right: 20px;
+}
+
+
+.contacttab {
+}
+
+    .contacttab h4 {
+    }
+
+    .contacttab .role {
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .contacttab .far, .contacttab .fas {
+        margin-right: 5px;
+    }
+
+/********* tournament with search sidebar *********/
+
+.tourney-date {
+    color: #121E40 !important;
+    padding: 0px 0px 5px 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.detailsbutton {
+    margin-top: 20px;
+}
+
+    .detailsbutton a {
+        background: #121E40;
+        border-radius: 250px;
+        font-family: 'Nunito', sans-serif;
+        color: #fff;
+        padding: 16px 10px;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #0E1E3F;
+    }
+
+        .detailsbutton a:hover {
+            color: white;
+            background: rgba(14, 30, 63, 0.6);
+            border: 1px solid #0E1E3F;
+            text-decoration: none;
+        }
+
+
+.searchwrap {
+    border: 2px solid #446DDE;
+    text-align: center;
+    padding: 0px 0px 15px 0px;
+}
+
+.searchsidebar p {
+    text-align: center;
+    background: #446DDE;
+    color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+
+.removemargin {
+    margin-bottom: 0px;
+}
+
+
+.tournament-tabs p {
+    color: #121E40;
+}
+
+.tournamentnav .nav-pills .nav-link {
+    border-radius: 2rem;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    margin: 5px;
+    border-color: #707A8A;
+    padding: 10px;
+}
+
+    .tournamentnav .nav-pills .nav-link:hover {
+        background: #E5E5E5;
+        border: 1px solid #707A8A;
+    }
+
+.nav-pills .nav-link.active {
+    border: 1px solid #4169E1 !important;
+    color: #fff !important;
+}
+
+/********* Ads *********/
+
+
+.ads {
+    padding: 20px 20px 20px 40px;
+    background: white;
+}
+
+.mobileads{
+    display: none !important;
+}
+
+    .ads .row {
+        background: #eaeaea;
+        padding: 20px;
+        position: relative;
+        min-height: 140px;
+    }
+
+    .ads h3 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: #121E40;
+    }
+
+    .ads img {
+        max-height: 100px;
+        padding: 10px;
+    }
+
+    .ads span {
+        text-align: center;
+        height: 100%;
+        display: grid;
+        margin: 0;
+        place-items: center center;
+    }
+
+    .ads .col-md-2 {
+        text-align: center;
+    }
+
+.ad-img {
+    background: white;
+    border-right: 5px solid #eaeaea;
+}
+
+    .ad-img:last-child {
+        border-right: 0px solid blue;
+    }
+
+
+.vertical-text {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    background: #121E40;
+    color: #fff;
+    float: left;
+    position: absolute;
+    left: 0;
+    padding: 2px 0px;
+    text-align: center;
+    top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: 140px;
+}
+
+.vertical-text-team {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    background: #121E40;
+    color: #fff;
+    float: left;
+    position: absolute;
+    left: 0;
+    padding: 2px 0px;
+    text-align: center;
+    top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: 140px;
+}
+
+.vertical-text-player {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    background: #121E40;
+    color: #fff;
+    float: left;
+    position: absolute;
+    left: 0;
+    padding: 2px 0px;
+    text-align: center;
+    top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: 70px;
+}
+
+.middleads {
+    padding: 0px 20px;
+}
+
+@media (max-width: 769px) {
+
+    .ad-img {
+        width: 50% !important;
+        border-bottom: 5px solid #eaeaea;
+        min-height: 100px;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .ad-2 {
+        border-right: 0px solid red;
+    }
+
+    .ad-4 {
+        border-right: 0px solid red;
+    }
+
+    .ad-5 {
+        border-bottom: 0px solid red;
+    }
+
+    .ad-6 {
+        border-right: 0px solid red;
+        border-bottom: 0px solid red;
+    }
+
+    .vertical-text {
+        width: 100%;
+        border-bottom: 5px solid #eaeaea;
+        transform: none !important;
+    }
+
+    .vertical-text-team {
+        width: 100%;
+        border-bottom: 5px solid #eaeaea;
+        transform: none !important;
+    }
+
+    .vertical-text-player {
+        width: 100%;
+        border-bottom: 5px solid #eaeaea;
+        transform: none !important;
+    }
+
+    .ads img {
+        max-height: 100px;
+        max-width: 120px;
+    }
+
+
+    .ads .row {
+        padding: 25px 5px 5px 5px;
+    }
+
+    .ads .col-md-2 {
+        padding-left: 10px;
+    }
+
+    .headerads {
+        display: none;
+    }
+}
+
+.nowregistering-box {
+    border-top:5px solid black;
+    margin-top:15px;
+}
+
+.nowplaying-header {
+    background: url('/pbt/img/ptimg_blue.png');
+    background-size: cover;
+    color: #fff;
+    padding: 40px 0px;
+}
+
+.nowplaying-box {
+    background: white;
+    border: 5px solid #121E40;
+    margin: 55px 0px 40px 0px;
+}
+
+    .nowplaying-box ol {
+        color: #121E40;
+        margin-bottom: 39px;
+        margin-top: 10px;
+    }
+
+        .nowplaying-box ol li {
+            padding-bottom: 5px;
+        }
+
+            .nowplaying-box ol li a {
+                color: #446DDE;
+            }
+
+    .nowplaying-box ul {
+        list-style-type: disc !important;
+        color: #121E40;
+    }
+
+.nowplaying-date {
+    background: #121E40;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: -23px;
+    margin-bottom: 23px;
+}
+
+.nowplaying-pagetitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.clinicsheader .nowplaying-box {
+    background: red;
+    display: none;
+}
+
+.destinationsheader .nowplaying-box {
+    background: red;
+    display: none;
+}
+
+.productsheader .nowplaying-box {
+    background: red;
+    display: none;
+}
+
+.toursheader .nowplaying-box {
+    background: red;
+    display: none;
+}
+
+
+
+.nowplaying-header .col-md-4 {
+    min-height: 150px;
+}
+
+.header-navy {
+    background: #121E40;
+    padding: 10px;
+}
+
+    .header-navy ul {
+        list-style-type: none;
+        margin-left: 20px;
+        padding: 0;
+        display: inline;
+    }
+
+    .header-navy li {
+        display: inline;
+        /*    margin-right: 20px;*/
+    }
+
+/* This css can be uncommented when we decide to use the multi select control.
+Also the following script and css reference must be added to the common.pm to get the multi select back:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+
+.bootstrap-select .dropdown-menu
+{
+background:white !important;
+}
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn)
+{
+    width:357px !important;
+}
+
+.bootstrap-select > button.dropdown-toggle
+{
+    border:1px solid #ced4da !important;
+    color:#212529 !important;
+    font-size:1rem;
+}
+
+.bootstrap-select:not([class*="form-control"]) > button.dropdown-toggle:not([class*="form-control"])
+{
+    height: 25px;
+    padding:0.5px;
+}
+
+
+.bootstrap-select > button.dropdown-toggle:hover
+{
+    cursor:default;
+    background-color:white;
+}
+*/
+
+
+.dropdown-menu.show {
+    background: #121E40;
+}
+
+.dropdown-menu {
+    border: 0px solid red !important;
+}
+
+
+.header-navy ul li a {
+    color: #fff;
+}
+
+.header-navy li .nav-link {
+    display: inline;
+}
+
+.header-navy .column1 {
+    display: inline;
+}
+
+.header-navy .column2 {
+    display: inline;
+    color: #fff;
+    text-align: right;
+}
+
+    .header-navy .column2 .right-navigation {
+        padding-right: 20px;
+        margin-top: 6px;
+    }
+
+    .header-navy .column2 .fas {
+        display: inline;
+    }
+
+    .header-navy .column2 span, .header-navy .column2 span p {
+        display: inline;
+    }
+
+    .header-navy .column2 p a {
+        color: #fff;
+        margin-left: 5px;
+    }
+
+.header-navy .fa-user, .header-navy .fa-search {
+    margin-left: 20px;
+}
+
+.nav-logo2 {
+    display: inline-block;
+    margin-top: 7px;
+}
+
+.nav-logo2 img {
+    max-width: 34px;
+}
+
+.tour-logo {
+    display: inline-block;
+}
+
+.tour-logo>img {
+    max-width: 260px;
+}
+
+.header-navy .column2 .language {
+    display: inline;
+}
+
+@media (min-width: 769px) {
+
+    .navbar-expand-lg {
+        display: none;
+    }
+}
+
+@media (max-width: 769px) {
+    .ads {
+        display: none !important;
+    }
+
+    .mobileads{
+        display: block !important
+    }
+
+    .headerads {
+        display: none !important;
+    }
+
+    .tournament-details ul {
+        padding: 0;
+    }
+
+    .tournament-logo {
+        height: 100%;
+    }
+
+        .tournament-logo img {
+            max-height: 100%;
+        }
+
+
+
+    .tournament-details li {
+        list-style-type: none;
+    }
+
+    .header-navy .column1 {
+        display: none;
+    }
+
+    .header-navy .column2 {
+        text-align: center;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+        .header-navy .column2 .right-navigation {
+            padding-right: 0px;
+            margin-top: 0px;
+        }
+
+        .header-navy .column2 .language {
+            display: none;
+        }
+
+    .nowplaying-pagetitle {
+        padding-top: 50px;
+        position: relative;
+        text-align: center;
+    }
+
+    .nowplaying-box {
+        /*margin: 60px 20px 30px 20px;*/
+        margin: 50px auto 0 auto; /*centered player account box on mobile*/
+    }
+
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .searchblock input {
+        width: 90% !important;
+    }
+
+    .searchblock .btn {
+        /* width: 250px; */
+        width: 90% !important;
+    }
+
+    #navbarSearch{
+        display:none !important;
+    }
+}
+
+
+
+/********* New Home *********/
+
+.nowplaying-homepage {
+    width: 100%;
+    height: 100%;
+}
+
+    .nowplaying-homepage h1 {
+        font-size: 1.5rem;
+        /* font-family: 'Nunito', sans-serif; */
+        font-weight: 900;
+        font-family: 'Fjalla One', sans-serif;
+        /* color: #121E40; */
+        color: #FFFFFF;
+        padding-bottom: 10px;
+    }
+
+    .nowplaying-homepage h2 {
+        font-family: 'Fjalla One', sans-serif;
+        color: #fff;
+        font-size: 3.5rem;
+        padding-bottom: 10px;
+    }
+
+    .nowplaying-homepage h5 {
+        /*font-family: 'Fjalla One', sans-serif;*/
+        font-family: 'Nunito', sans-serif;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .nowplaying-homepage h3 {
+        font-family: 'Fjalla One', sans-serif;
+        color: #fff;
+        font-size: 3.0rem;
+        padding-bottom: 10px;
+    }
+
+    .nowplaying-homepage h6 {
+        /*font-family: 'Fjalla One', sans-serif;*/
+        font-family: 'Nunito', sans-serif;
+        color: #fff;
+        font-size: 1.0rem;
+        margin-bottom: 30px;
+    }
+
+
+
+.nowplaying-wrap {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.blue-rounded-button {
+    background: #121E40;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 250px;
+}
+
+@media (min-width:1200px) and (max-width:1400px)
+{
+    .homecontent-padding
+    {
+        padding:0px 15px 0px 15px;
+    }
+}
+
+
+
+/********* 5 Column layout *********/
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 769px) {
+    .col-md-5ths {
+        width: 20% !important;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (max-width: 769px) {
+    .col-md-5ths {
+        width: 100% !important;
+        float: none !important;
+    }
+}
+
+/********* Clinics and Camps *********/
+
+.details {
+    font-size: .7em;
+}
+
+.ad-delete {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: red;
+    padding: 8px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.4s ease 0s;
+}
+
+.ad-details {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #4169E1;
+    padding: 8px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.4s ease 0s;
+}
+
+.ad-delete:hover {
+    cursor:pointer;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+
+.ad-details:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+
+.clinic-container {
+    width: 90%;
+}
+
+.u-float-right {
+    float: right;
+}
+
+.u-flex-center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.subtle {
+    color: #888;
+    font-size: 12px;
+}
+
+.card-media {
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    height: 100%;
+    margin-bottom: 25px;
+    transition: all 300ms ease-out;
+    width: 100%;
+}
+
+    .card-media:hover {
+        box-shadow: 0 5px 14px rgba(0, 0, 0, .2);
+    }
+
+.card-media-object-container {
+    background: none;
+    float: left;
+    height: 100%;
+    width: 35%;
+    position: relative;
+}
+
+.card-media-object {
+    background-position: center center;
+    background-size: contain;
+    min-height: 220px;
+    background-repeat:no-repeat;
+    height: 100%;
+}
+
+.card-media-body {
+    background-color: #fff;
+    float: left;
+    height: 100%;
+    padding: 12px 15px;
+    position: relative;
+    width: 65%;
+}
+
+.card-media-body-top {
+}
+
+.card-media:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-media-body-heading {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-media-body-supporting-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    opacity: 1;
+    padding: 0 15px;
+    transition: all 300ms ease-out;
+    width: 100%;
+}
+
+.card-media-body-supporting-bottom-text {
+    display: inline-block;
+}
+
+.card-media-link {
+    color: #41C1F2;
+    text-decoration: none;
+}
+
+
+@media (max-width: 750px) {
+
+    .draggable-containment {
+        max-width: 900px;
+        margin-bottom:40px;
+        max-height:700px;
+        height:auto;
+    }
+
+    .clinic-container {
+        padding: 0 1.7rem;
+        margin: 0px auto 0;
+        position:relative;
+        height:100%;
+    }
+
+    .card-media-object-container{
+        position:relative;
+        background:none;
+        height:200px;
+        width:100%;
+        float:none;
+    }
+
+    .card-media {
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 19px 38px rgba(0,0,0, 0.3), 0 15px 12px rgba(0,0,0, 0.2);
+    }
+
+    .card-media-body{
+        width:100%;
+        height:auto;
+    }
+
+    .card-media-body-supporting-bottom {
+        opacity: 1 !important;
+        padding: 0 15px;
+        position: static;
+        width:auto;
+        transition: none;
+        left:auto;
+        bottom:auto;
+    }
+
+    .card-media-body-heading{
+        margin-top:20px;
+        font-size: 20px;
+        border-bottom: 1px solid black;
+        text-decoration: none;
+    }
+
+    .details{
+        font-size: .85rem;
+        margin-top: 10px;
+    }
+
+    .card-media-body-supporting-bottom-text{
+        margin-left:auto !important;
+        margin-bottom: auto !important
+    }
+}
+
+.linetest {
+    width: 100%;
+    height: 1px;
+    margin: 10px 0px;
+    border: .5px dashed #121E40;
+}
+
+.tournamentnav .navtop {
+    margin-top: 12px;
+}
+
+.tournament-details .featuredimg {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .tournament-details .featuredimg img {
+        height: 100%;
+    }
+
+.tournament-details .featuredimg2 {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .tournament-details .featuredimg2 img {
+        height: 100%;
+    }
+
+.tournament-details .featuredimg3 {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .tournament-details .featuredimg3 img {
+        height: 100%;
+    }
+
+.mobilesubnav {
+    list-style-type: none;
+}
+
+    .mobilesubnav li a {
+        color: #4169E1;
+    }
+
+
+.headerads {
+    margin: 10px 0px;
+}
+
+
+.playerlookupsearch {
+    margin: 20px 0px;
+}
+
+
+/*html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow:hidden;
+}*/
+
+
+.photocredit {
+    text-align: right;
+    color: #121E40;
+}
+
+    .photocredit span {
+        background: #446DDE;
+        color: #fff;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+        .photocredit span a {
+            color: #fff;
+        }
+
+/********* Registration Page *********/
+
+.registration-box {
+    background: white;
+    border: 2px solid #a3a2a2;
+    margin: 55px 0px 40px 0px;
+}
+
+.registration-box-title {
+    background: #121E40;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: -23px;
+    margin-bottom: 23px;
+    color: #fff;
+}
+
+.registration-box h4 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.required {
+    color: red;
+}
+
+.registration-box .open {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #00C176;
+    text-align: center;
+}
+
+    .registration-box .open a {
+        color: #fff;
+    }
+
+.registration-box .fa-plus {
+    margin-right: 10px;
+    color: #fff;
+    background: #00C176;
+    border-radius: 250px;
+    padding: 8px 10px;
+}
+
+.registration-box .edit {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #4169E1;
+    text-align: center;
+}
+
+    .registration-box .edit a {
+        color: #fff;
+    }
+
+.registration-box .editleft {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #4169E1;
+    text-align: center;
+    float: left;
+    min-width: 85px;
+}
+
+    .registration-box .editleft a {
+        color: #fff;
+    }
+
+.registration-box .removeright {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #ff0000;
+    text-align: center;
+    float: right;
+    min-width: 85px;
+}
+
+    .registration-box .removeright a {
+        color: #fff;
+    }
+
+.registration-box .remove {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #ff0000;
+    text-align: center;
+    float: right;
+    min-width: 85px;
+}
+
+    .registration-box .remove a {
+        color: #fff;
+    }
+/*.fake-dropdown{
+    border:1px solid #a3a2a2;
+    border-radius: 250px;
+    padding: 5px;
+}*/
+
+.registration-row-header {
+    border-bottom: 1px solid #a3a2a2;
+    padding-bottom: 10px;
+}
+
+
+.registration-row {
+    border-bottom: 1px solid #a3a2a2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .registration-row p {
+        margin: 0;
+    }
+
+    .registration-row:last-child {
+        border-bottom: 0px solid red !important;
+    }
+
+.skill-column, .age-column {
+    text-align: center;
+}
+
+
+.need-partner {
+    border: 1px solid #4169E1;
+    border-radius: 250px;
+    padding: 5px;
+    background: #fff;
+    color: #4169E1;
+    text-align: center;
+    font-size: 12px;
+    max-width: 60%;
+}
+
+.registration-box-wrap {
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    width: 95%;
+}
+
+.registration-box-1 {
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-right: 40px;
+}
+
+
+
+.registration-box .save {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #00C176;
+    text-align: center;
+}
+
+    .registration-box .save a {
+        color: #fff;
+    }
+
+.total {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+
+.registration-box-wrap-questions {
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    width: 95%;
+}
+
+
+.registration-box .answer {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #00C176;
+    text-align: center;
+}
+
+    .registration-box .answer a {
+        color: #fff;
+    }
+
+
+
+.info-btn {
+    text-align: center;
+}
+
+    .info-btn i {
+        font-size: 20px;
+        padding-top: 10px;
+        color: #121E40;
+    }
+
+
+.continue {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #a3a2a2;
+    text-align: center;
+}
+
+    .continue a {
+        color: #fff;
+    }
+
+.continuebtn {
+    margin: 0 auto;
+    padding: 50px 0px 60px 0px;
+}
+
+.registration-row span {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .box-title {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .registration-row span {
+        display: inline;
+    }
+
+    .info-btn, .skill-column, .age-column {
+        text-align: left;
+    }
+
+    .totalrow {
+        text-align: center;
+    }
+
+    .registration-row-header {
+        display: none;
+    }
+
+    .volunteer-header {
+        display: block !important;
+    }
+
+        .volunteer-header .col-md-1, .volunteer-header .col-md-8 {
+            display: none;
+        }
+
+        .volunteer-header #saveVolChanges {
+            display: block !important;
+        }
+
+    .regitem-title {
+        font-weight: 700;
+    }
+
+    .registration-box {
+        margin: 55px 10px 0px 10px;
+    }
+
+    .continuebtn {
+        padding: 50px 20px 60px 20px;
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 75%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* The Close Inverted Color Button */
+.close_inv {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close_inv:hover,
+    .close_inv:focus {
+        color: #aaaaaa;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modaltitle {
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/*New Register Box*/
+
+.registernow-box {
+    max-height: 145px;
+    margin: 1em 0;
+}
+
+    .registernow-box .registration-status {
+        background: #fff !important;
+        padding: 25px 50px;
+        max-height: 165px;
+    }
+
+        .registernow-box .registration-status h3 {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .registernow-box .registration-status p {
+            color: #212529;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .registernow-box .registration-status .registration-button, .registernow-box .registration-status .registration-button a {
+            color: #fff;
+            border-radius: 250px;
+            padding: 8px 0px;
+            text-align: center;
+            margin-top: -12px;
+            margin-bottom: 0;
+        }
+
+    .registernow-box .numbercount-box {
+        padding: 35px 10px;
+        text-align: center;
+        max-height: 165px;
+    }
+
+        .registernow-box .numbercount-box h2 {
+            color: #fff;
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+
+    /*registration box open */
+
+    .registernow-box .open h3 {
+        color: #00C176;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+.open .registration-button {
+    /* background: #00C176;
+    border: 1px solid #53BD7D;*/
+    margin-top: -8px;
+}
+
+    .open .registration-button a {
+        background: #00C176;
+        border: 1px solid #53BD7D;
+        width: 100%;
+        padding: 10px;
+        margin-top: -5px;
+        display: inline-block;
+    }
+
+        .open .registration-button a:hover {
+            background: rgba(83, 189, 125, 0.3);
+            border: 1px solid #53BD7D;
+            color: #00C176;
+            text-decoration: none;
+        }
+
+.closedpayonly .registration-button {
+    /* background: #00C176;
+    border: 1px solid #53BD7D;*/
+    margin-top: -8px;
+}
+
+    .closedpayonly .registration-button a {
+        background: #00C176;
+        border: 1px solid #53BD7D;
+        width: 100%;
+        padding: 10px;
+        margin-top: -5px;
+        display: inline-block;
+    }
+
+        .closedpayonly .registration-button a:hover {
+            background: rgba(83, 189, 125, 0.3);
+            border: 1px solid #53BD7D;
+            color: #00C176;
+            text-decoration: none;
+        }
+
+.registernow-box .open {
+    background: #00C176;
+}
+
+/*registration box coming */
+
+.registernow-box .coming h3 {
+    color: #4169E1;
+}
+
+.coming .registration-button {
+    background: #4169E1;
+}
+
+.registernow-box .coming {
+    background: #4169E1;
+}
+
+/*registration box closed */
+
+.registernow-box .closed h3 {
+    color: #FF003C;
+}
+
+.closed .registration-button {
+    background: #FF003C;
+}
+
+.registernow-box .closed {
+    background: #FF003C;
+}
+
+.registernow-box .closedpayonly {
+    background: #FF003C;
+}
+
+@media (max-width: 1199px) {
+
+    .registernow-box .registration-status {
+        padding: 20px 30px;
+    }
+
+    .registernow-box .numbercount-box h2 {
+        font-size: 50px;
+    }
+
+    .registernow-box .registration-status h3 {
+        font-size: 20px;
+    }
+
+    .registernow-box .registration-status p {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 991px) {
+    .col-md-8, .col-md-4, .col-md-3, .col-md-2 {
+        width: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .partner-info-title {
+        padding-bottom: 10px;
+    }
+
+    .partner-info-details {
+        padding-top: 10px;
+    }
+
+    .partner-info-button-details {
+        padding: 10px 0px 20px 0px;
+    }
+
+    .tourneylist .row {
+        background: #f0f0f0;
+        border: 1px solid #E5E5E5;
+        margin-bottom: 20px;
+    }
+
+    .tournament-list .info h3 a {
+        color: black;
+    }
+
+    .tournament-tabs p {
+        color: #495057;
+    }
+
+    .tourneylist .row {
+        display: flex;
+        /* Optional, if you want the DIVs 100% width: */
+        flex-direction: column;
+    }
+
+        .tourneylist .row > .info {
+            order: 3;
+        }
+
+        .tourneylist .row > .logos {
+            order: 2;
+        }
+
+        .tourneylist .row > .tags {
+            order: 1;
+        }
+
+        .tourneylist .row > .registration {
+            order: 4;
+        }
+
+    .tournament-list .row > .tournamentnav {
+        order: 2;
+    }
+
+    .tournament-list .row > .searchsidebar {
+        order: 1;
+    }
+
+    .tournament-list .row > .searchsidebar {
+        margin: 0px 0px 30px 0px;
+    }
+}
+
+
+
+.partner-info-title {
+    color: #121E40;
+    font-weight: 600;
+}
+
+.partner-info-details {
+    color: #121E40;
+    font-style: italic;
+}
+
+.partner-info-button-details {
+    color: #121E40;
+    font-style: italic;
+}
+
+.modal-content input {
+    border: 2px solid #4169E1;
+    padding: 10px;
+    width: 100%;
+}
+
+.modal-content .close {
+    display: inline !important;
+}
+
+.modal-content .close_inv {
+    display: inline !important;
+}
+
+.modal-content input[type=radio] {
+    padding: 0;
+    width: 10% !important;
+}
+
+.yourinfo .modaltitle, .partnerinfo .modaltitle {
+    background: #121E40;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.yourinfo {
+    border: 2px solid #121E40;
+    margin-top: 30px;
+}
+
+.partnerinfo {
+    margin-bottom: 10px;
+    border: 2px solid #121E40;
+    margin-top: 30px;
+    padding: 15px 0px;
+}
+
+.modal-content .header-row {
+    padding: 0;
+}
+
+
+.modal-content .edit {
+    color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    background: #4169E1;
+    text-align: center;
+}
+
+    .modal-content .edit a {
+        color: #fff;
+    }
+
+.modal-content .register {
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 250px;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+}
+
+    .modal-content .register a {
+        color: #fff;
+    }
+
+.modal-content .noedit {
+    border: 2px solid #121E40 !important;
+}
+
+.additionaldetails {
+    color: #121E40;
+    font-style: italic;
+}
+
+.modal-content input[type=checkbox] {
+    width: 3%;
+}
+
+.modal-content .checkbox {
+    margin: 10px 0px 20px 0px;
+}
+
+.bluebtn {
+    background: #4169E1;
+    border-radius: 250px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid #4169E1;
+    /* border-radius: 250px; */
+    /*   width: 300px;*/
+    margin: 10px auto;
+    padding: 5px;
+    /* background: #121E40; */
+    display: block;
+}
+
+.greenbtn {
+    background: #00C176;
+    color: white;
+    border-radius: 250px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.blueoutlinebtn {
+    background: white;
+    border: 1px solid #121E40;
+    color: #121E40;
+    border-radius: 250px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+    .blueoutlinebtn:hover {
+        background: rgba(18, 28, 63, 0.3);
+        border: 1px solid #121E40;
+        color: #121E40;
+    }
+
+.redoutlinebtn {
+    background: white;
+    border: 1px solid #FF003C;
+    color: #FF003C;
+    border-radius: 250px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+    .redoutlinebtn:hover {
+        background: rgba(255, 0, 60, 0.3);
+        border: 1px solid #FF003C;
+        color: #FF003C;
+    }
+
+.greenoutlinebtn {
+    background: white;
+    border: 1px solid #00C176;
+    color: #00C176;
+    border-radius: 250px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.greenoutlinebtn:hover {
+    background: rgba(255, 0, 60, 0.3);
+    border: 1px solid #00C176;
+    color: #00C176;
+}
+
+
+.blueoutlinebtn {
+    background: white;
+    border: 1px solid #446DDE;
+    color: #446DDE;
+    border-radius: 250px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+    .blueoutlinebtn:hover {
+        background: rgba(255, 0, 60, 0.3);
+        border: 1px solid #446DDE;
+        color: #00C176;
+    }
+
+.cancelrow {
+    margin-top: 10px;
+}
+
+/*sticky footer*/
+
+* {
+    box-sizing: border-box;
+}
+
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+.main-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 387px; /* height of your footer */
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+
+    .main-container {
+        padding-bottom: 855px; /* height of your footer */
+    }
+}
+
+@media (max-width: 769px) {
+
+    .main-container {
+        padding-bottom: 957px; /* height of your footer */
+    }
+}
+
+#Documentation {
+    height: 2850px;
+}
+
+@media (max-width: 1024px) {
+    #Documentation {
+        height: 4400px;
+    }
+}
+
+
+/* ereport */
+
+.rwd-table {
+    margin: 1em 0;
+    min-width: 300px;
+    width: 100%;
+}
+
+    .rwd-table tr {
+        /*  border-top: 1px solid #ddd;*/
+        /*  border-bottom: 1px solid #ddd;*/
+    }
+
+        .rwd-table tr:first-child {
+            border-bottom: 1px dashed #c4c4c4;
+        }
+
+    .rwd-table th {
+        display: none;
+    }
+
+    .rwd-table td {
+        display: block;
+    }
+
+        .rwd-table td:first-child {
+            padding-top: .5em;
+        }
+
+        .rwd-table td:last-child {
+            padding-bottom: .5em;
+        }
+
+        .rwd-table td:before {
+            content: attr(data-th) ": ";
+            font-weight: bold;
+            width: 6.5em;
+            display: inline-block;
+        }
+
+@media (min-width: 480px) {
+    .rwd-table td:before {
+        display: none;
+    }
+}
+
+.rwd-table th, .rwd-table td {
+    text-align: left;
+}
+
+@media (min-width: 480px) {
+    .rwd-table th, .rwd-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+
+        .rwd-table th:first-child, .rwd-table td:first-child {
+            padding-left: 0;
+        }
+
+        .rwd-table th:last-child, .rwd-table td:last-child {
+            padding-right: 0;
+        }
+}
+
+.rwd-table {
+    background: white;
+    color: #121E40;
+    border-radius: 0px;
+    overflow: hidden;
+    border: 2px solid #121E40;
+}
+
+    .rwd-table tr {
+        border-color: #46627f;
+    }
+
+    .rwd-table th, .rwd-table td {
+        margin: .5em 1em;
+    }
+
+@media (min-width: 480px) {
+    .rwd-table th, .rwd-table td {
+        padding: 1em !important;
+    }
+}
+
+.rwd-table th, .rwd-table td:before {
+    color: #fff;
+    background: #121E40;
+}
+
+#menuMiscellaneous table {
+    width: 100%;
+}
+
+.reginfo{
+    height:100%;
+}
+
+@media(max-width: 798px){
+    .reginfo{
+        height: 450px;
+        width:350px;
+    }
+}
+
+@media (max-width: 480px) {
+
+
+
+    .rwd-table th, .rwd-table td:before {
+        color: #121E40;
+        background: transparent;
+        width: 100%;
+        display: none; /*remove colon on eventsbrackets*/
+    }
+
+    .rwd-table td:last-child {
+        display: none !important; /*remove space on eventsbrackets*/
+    }
+
+    #menuSchedule .rwd-table td:last-child {
+        display: block !important; /*remove space on eventsbrackets*/
+    }
+
+    #menuSchedule .col-date {
+        display: block !important;
+    }
+
+    .rwd-table th, .rwd-table td {
+        margin: .5em 0 !important;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .vertical-text {
+        width: 100% !important;
+        border-bottom: 0px solid #eaeaea;
+    }
+
+    .vertical-text-team {
+        width: 100% !important;
+        border-bottom: 0px solid #eaeaea;
+    }
+
+    .vertical-text-player {
+        width: 100% !important;
+        border-bottom: 0px solid #eaeaea;
+    }
+
+    .rwd-table td:first-child {
+        padding-top: 0px; /*remove padding above eventsbrackets*/
+    }
+
+    .playerlist-wrap .col-player, .playerlist-wrap .col-from {
+        display: inline-block !important;
+        width: 50% !important;
+        padding: 10px !important;
+        text-align: left !important;
+    }
+
+        .playerlist-wrap .col-player:before, .playerlist-wrap .col-from:before {
+            display: none;
+        }
+
+    .team-wrap .col-email:before, .team-wrap .col-name:before, .team-wrap .col-age:before, .team-wrap .col-club:before, .team-wrap .col-skill:before, .team-wrap .col-other:before {
+        display: none;
+    }
+
+    .team-wrap .rwd-table tbody tr {
+        display: block;
+        /* flex-direction: column; */
+        text-align: left;
+    }
+
+    .plookuptr{
+        display:initial !important;
+    }
+
+    .team-wrap .rwd-table tbody tr > .col-email {
+        width: 10% !important;
+        display: inline-block;
+        float: right;
+        padding: 5px;
+    }
+
+        .team-wrap .rwd-table tbody tr > .col-name {
+            order: 1;
+            width: 40% !important;
+            display: inline;
+            float: left;
+            text-align: left !important;
+            padding: 0px 10px;
+        }
+
+        .team-wrap .rwd-table tbody tr > .col-age {
+            order: 2;
+            width: 10% !important;
+            /* background: red; */
+            display: inline-block;
+        }
+
+        .team-wrap .rwd-table tbody tr > .col-club {
+            order: 5;
+            /* width: 33% !important; */
+            display: none !important;
+        }
+
+        .team-wrap .rwd-table tbody tr > .col-skill {
+            order: 4;
+            width: 35% !important;
+            display: inline-block;
+        }
+
+        .team-wrap .rwd-table tbody tr > .col-other {
+            order: 6;
+            width: 33% !important;
+            display: none !important;
+        }
+
+        .team-wrap .rwd-table tbody tr > .col-need {
+            order: 7;
+            width: 100% !important;
+            display: inline-block;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            text-align: left !important;
+        }
+
+            .team-wrap .rwd-table tbody tr > .col-need:before {
+                width: 40%;
+                display: inline-block;
+                text-align: left;
+                padding: 10px 0px 10px 10px;
+            }
+
+    .team-wrap .rwd-table tr:first-child {
+        border-bottom: 0px solid red;
+    }
+
+    #menuPlayersNeedingPartners .tournament-details {
+        margin: 0px 10px;
+    }
+
+
+    /*    .header-table {
+        display: none;
+    }*/
+}
+
+.team-wrap {
+    position: relative;
+}
+
+    .team-wrap .vertical-text {
+        width: 115px;
+    }
+
+    .team-wrap .vertical-text-team {
+        width: 115px;
+    }
+
+    .team-wrap .vertical-text-player {
+        width: 58px;
+    }
+
+.section-title {
+    text-align: center;
+}
+
+/*Need Partners*/
+
+.partnerneed {
+    color: #FF003C;
+}
+
+
+.col-name {
+    width: 20%;
+}
+
+.col-age {
+    width: 5%;
+}
+
+.col-club {
+    width: 20%;
+}
+
+.col-skill {
+    width: 10%;
+}
+
+.col-other {
+    width: 15%;
+}
+
+.col-need {
+    width: 15%;
+}
+
+.col-email {
+    width: 5%;
+}
+
+.col-hometown {
+    width: 15%;
+}
+
+@media (max-width: 480px) {
+    .col-name, .col-age, .col-club, .col-skill, .col-other, .col-need, .col-email {
+        width: 100% !important;
+    }
+}
+
+/*Bracket Overview*/
+
+.col-bracket {
+    width: 40%;
+}
+
+.col-gold {
+    width: 20%;
+}
+
+.col-silver {
+    width: 20%;
+}
+
+.col-bronze {
+    width: 20%;
+}
+
+@media (max-width: 480px) {
+    .col-bracket, .col-gold, .col-silver, .col-bronze {
+        width: 100% !important;
+    }
+}
+
+/*Player List*/
+
+
+.col-player {
+    width: 50%;
+}
+
+    .col-player span {
+        font-weight: 600;
+    }
+
+.col-from {
+    width: 50%;
+    color: #707A8A;
+}
+
+.playerlist-wrap .rwd-table tr {
+    border-bottom: 1px dashed #c4c4c4;
+}
+
+
+@media (max-width: 480px) {
+    .col-player, .col-from {
+        width: 100% !important;
+    }
+}
+
+/*schedule*/
+
+.col-date {
+    width: 25%;
+}
+
+.col-time {
+    width: 25%;
+}
+
+.col-group {
+    width: 50%;
+}
+
+.schedule-wrap .rwd-table tr {
+    border-bottom: 1px dashed #c4c4c4;
+}
+
+@media (max-width: 480px) {
+    .col-date, .col-time, .col-group {
+        width: 100% !important;
+    }
+}
+
+/*Player Lookup Main*/
+
+.playerlookup {
+}
+
+    .playerlookup tr {
+        border-bottom: 1px dashed #c4c4c4;
+    }
+
+    .playerlookup .rwd-table {
+        margin-top: 10px;
+    }
+
+    .playerlookup .col-name {
+        width: 25%;
+    }
+
+    .playerlookup .col-gender {
+        width: 25%;
+    }
+
+    .playerlookup .col-club {
+        width: 25%;
+    }
+
+    .playerlookup .col-city {
+        width: 25%;
+    }
+
+.schedule-wrap .rwd-table tr {
+    border-bottom: 1px dashed #c4c4c4;
+}
+
+@media (max-width: 480px) {
+    .playerlookup .col-name, .playerlookup .col-gender, .playerlookup .col-club, .playerlookup .col-city {
+        width: 100% !important;
+    }
+
+    .searchblock {
+        width: 100% !important;
+    }
+}
+
+.playersearchbox {
+    background: #f0f0f0;
+    border: 1px solid #E5E5E5;
+    padding: 20px 0px 20px 0px;
+    margin: 10px 0px;
+}
+
+.displayingtext {
+    color: #495057;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.searchblock {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.azsearch a {
+    padding-right: 10px;
+}
+
+
+.findplayer .col-name {
+    width: 100% !important;
+}
+
+
+.findplayerdetail {
+}
+
+    .findplayerdetail .playername {
+    }
+
+    .findplayerdetail span {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+        .findplayerdetail span:last-child {
+            padding-bottom: 0px;
+        }
+
+        .findplayerdetail span p {
+            display: inline;
+        }
+
+        .findplayerdetail span .title {
+            font-weight: 700;
+        }
+
+    .findplayerdetail .box {
+        background: #E5E5E5;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+
+    .findplayerdetail .col-event {
+        width: 50%;
+    }
+
+
+    .findplayerdetail .col-team {
+        width: 50%;
+    }
+
+@media (max-width: 769px) {
+    .findplayerdetail .col-event, .findplayerdetail .col-team {
+        width: 100% !important;
+    }
+}
+
+
+.searchbardiv {
+    display: block;
+    position: fixed;
+    background: #7D1935;
+    top: 50px;
+    right: 0px;
+    z-index: 1001;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 0px;
+}
+
+.buttonsearch {
+    position: fixed;
+    top: 18px;
+    float: right;
+    right: 0px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+    .buttonsearch:hover {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: 0px;
+    }
+
+    .buttonsearch:focus {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: 0px;
+    }
+
+#formsearch {
+    display: none;
+}
+
+.glyphicon.glyphicon-search {
+    font-size: 18px;
+}
+
+#searchbox {
+    box-shadow: none;
+    padding: 8px 14px;
+}
+
+    #searchbox:hover {
+        box-shadow: none;
+    }
+
+.form-control:focus {
+    border-color: #ccc;
+}
+
+.searchresultsfilters {
+    padding-top: 30px;
+}
+
+.searchresultsfilter {
+    background: #e5e5e5;
+    color: #495057;
+    display: inline;
+    padding: 7px 13px;
+    border-radius: 250px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.searchresultsfilterx {
+    color: #707A8A;
+    padding-left: 10px;
+}
+
+.searchresultsfilters .displayingtext {
+    padding-top: 30px;
+}
+
+.searchresultsfilters .centerthis {
+    text-align: center;
+}
+
+/*Tournament Detail Header Mobile*/
+
+@media (max-width: 1360px) {
+    .tournament-details-header {
+        padding: 40px !important;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .tournament-details-header .container {
+        max-width: 100% !important;
+    }
+
+    .tournament-logo img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .profile-table tr td:nth-child(3) { /*tournament account creation*/
+        display: inline-block;
+        width: 100%;
+        /* line-height: 1; */
+        font-style: italic;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .profile-table tr td table td {
+        width: 100% !important;
+        font-style: normal;
+        font-weight: normal !important;
+        text-align: left !important;
+    }
+
+    .tournament-logo {
+        width: 25% !important;
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+
+    .tournament-details-header .tournament-info {
+        width: 75% !important;
+        flex: 0 0 75% !important;
+        max-width: 75% !important;
+    }
+
+    .registernow-box .registration-status {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .registernow-box {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+        .registernow-box .numbercount-box {
+            width: 50% !important;
+            flex: 0 0 50% !important;
+            max-width: 50% !important;
+        }
+
+        .registernow-box .registration-status h3, .registernow-box .registration-status p {
+            text-align: center;
+        }
+
+        .registernow-box .registration-status {
+            padding: 20px 30px !important;
+        }
+
+            .registernow-box .registration-status.closed {
+                padding: 60px 50px !important;
+            }
+
+            .registernow-box .registration-status.coming {
+                padding: 60px 50px !important;
+            }
+}
+
+
+@media (max-width: 769px) {
+
+    .tournament-details-header .tournament-info, .tournament-logo {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+        .tournament-logo img {
+            width: 100%;
+            max-width: 40%;
+            height: 100%;
+        }
+
+    .tournamentnav .nav-pills .nav-link:hover {
+        background: #4169E1;
+        border: 1px solid #4169E1;
+        color: #fff !important;
+    }
+}
+
+
+/************************************************
+**
+**  PROFILE PAGES
+**
+*************************************************/
+.profile-box {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6F7988;
+}
+
+.profile-header {
+    background-color: #6F7988;
+    color: #FFFFFF;
+}
+
+.profile-table {
+    margin: 20px;
+}
+
+    .profile-table td.comment {
+        border-left: 1px solid #6F7988;
+        padding: 10px;
+    }
+
+.row-nav {
+    padding: 20px;
+}
+
+
+/************************************************
+**
+**  TOURNAMENT OVERVIEW MOBILE
+**
+*************************************************/
+
+@media (max-width: 500px) {
+
+    .d-flex .input-group-append { /*fixes tournament calendar on mobile*/
+        display: block;
+    }
+
+        .d-flex .input-group-append .btn-outline-secondary { /*fixes tournament calendar on mobile*/
+            width: 100%;
+            border-radius: 0px;
+            margin-top: 10px;
+        }
+
+    .d-flex .col-9 { /*fixes tournament calendar on mobile*/
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .opennow p a, .closednow p a, .soon a {
+        padding: 10px;
+    }
+
+    .tourneylist .row {
+        background: #f0f0f0;
+        border: 1px solid #E5E5E5;
+        margin-bottom: 20px;
+    }
+
+    .tournament-list .info h3 a {
+        color: black;
+    }
+
+    .tournament-tabs p {
+        color: #495057;
+    }
+
+    .tournament-list .registration .registernow {
+        color: #00C176;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        line-height: 16px;
+        margin: 0 !important;
+        letter-spacing: .5px;
+        border: 0px solid red;
+        background: transparent;
+        margin-bottom: 10px !important;
+    }
+
+    .tournament-list .registration .soon-date {
+        color: #446DDE;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        line-height: 16px;
+        margin: 0 !important;
+        letter-spacing: .5px;
+        border: 0px solid red;
+        background: transparent;
+        margin-bottom: 10px !important;
+    }
+
+    .tournament-list .registration .closed {
+        color: #FF003C;
+        margin-bottom: 20px !important;
+        border: 0px solid #FF003C;
+        border-radius: 250px;
+        width: 300px;
+        margin: 0 auto;
+        /*padding: 10px;*/
+        background: white;
+    }
+
+    .tournament-list .registration .closedpayonly {
+        color: #FF003C;
+        margin-bottom: 20px !important;
+        border: 0px solid #FF003C;
+        border-radius: 250px;
+        width: 300px;
+        margin: 0 auto;
+        /*padding: 10px;*/
+        background: white;
+    }
+
+    .tournament-list .registration .open {
+        color: #00C176;
+        margin-bottom: 0px;
+        border: 0px solid #00C176;
+        border-radius: 250px;
+        width: 300px;
+        margin: 0 auto;
+        /*padding: 10px;*/ /*remove white border*/
+        background: white;
+    }
+
+    .tournament-list .registration .soon {
+        color: #446DDE;
+        margin-bottom: 0px;
+        border: 0px solid #446DDE;
+        border-radius: 250px;
+        width: 300px;
+        margin: 0 auto;
+        /*padding: 10px;*/
+        background: white;
+    }
+
+    .tournament-list .registration span p:first-child {
+        margin-bottom: 10px;
+    }
+
+    .closednow .registernow {
+        display: none;
+    }
+
+    .detailsbutton a {
+        color: white;
+        margin-bottom: 10px;
+        border: 1px solid #121E40;
+        border-radius: 250px;
+        width: 300px;
+        margin: 0 auto;
+        padding: 16px 10px;
+        background: #121E40;
+        display: block;
+    }
+
+    .tournament-list .info {
+        margin-bottom: 10px;
+    }
+
+    .tourney-date {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 900;
+        color: black;
+        margin-bottom: 0;
+    }
+
+    .tournament-list .tags {
+        margin-top: 20px;
+    }
+
+    .tournament-list .row {
+        padding: 0px;
+    }
+
+    .tournament-tabs .row:first-child {
+        padding: 0px;
+    }
+
+
+    .tourneylist .row {
+        display: flex;
+        /* Optional, if you want the DIVs 100% width: */
+        flex-direction: column;
+    }
+
+        .tourneylist .row > .info {
+            order: 3;
+        }
+
+        .tourneylist .row > .logos {
+            order: 2;
+        }
+
+        .tourneylist .row > .tags {
+            order: 1;
+        }
+
+        .tourneylist .row > .registration {
+            order: 4;
+        }
+
+    .ads {
+        display: none;
+    }
+
+    .mobileads{
+        display: block !important;
+    }
+
+    .tournament-list .tags img {
+        background: white;
+        padding: 10px;
+    }
+
+    .nav-fill .nav-item {
+        -ms-flex: 1 1 auto;
+        flex: none;
+        text-align: center;
+        width: 50%;
+    }
+
+    .navtop {
+        margin-top: 30px !important;
+    }
+
+    .tournament-list .row {
+        display: flex;
+        /* Optional, if you want the DIVs 100% width: */
+        flex-direction: column;
+    }
+
+        .tournament-list .row > .tournamentnav {
+            order: 2;
+        }
+
+        .tournament-list .row > .searchsidebar {
+            order: 1;
+        }
+
+        .tournament-list .row > .searchsidebar {
+            margin-top: 30px;
+        }
+
+    select {
+        width: 95%;
+        max-width: 100%;
+        background: url('/pbt/img/dropdown.png') no-repeat right #ddd;
+        -webkit-appearance: none;
+    }
+
+    .tournament-details ul {
+        padding: 0;
+    }
+
+    .tournament-details li {
+        list-style-type: none;
+    }
+
+    .tournament-logo {
+        height: 100%;
+    }
+
+        .tournament-logo img {
+            max-height: 100%;
+        }
+
+    .tournament-details-header {
+        background: #121E40 !important;
+    }
+
+    .registernow-box .registration-status {
+        padding: 25px 10px !important;
+    }
+
+    .currentlyplaying .nav-fill .nav-item {
+        width: 100%;
+    }
+
+    .registernow-box .registration-status.closed {
+        padding: 50px 50px !important;
+    }
+
+    .registernow-box .registration-status.closedpayonly {
+        padding: 25px 50px !important;
+    }
+
+    .registernow-box .registration-status.coming {
+        padding: 25px 50px !important;
+    }
+
+    .registernow-box .registration-status.nowplaying {
+        padding: 25px 50px !important;
+    }
+
+    .photocredits {
+        text-align: center;
+    }
+
+        .photocredits .credit {
+            max-width: 50%;
+            text-align: center;
+            margin: 0 auto !important;
+            float: none !important;
+        }
+
+    .nav-pills .nav-link.active {
+        border: 1px solid #4169E1 !important;
+        color: #fff !important;
+    }
+
+    .tournamentnav .nav-item a:hover {
+        color: white !important;
+    }
+
+    .contacttab {
+        background: #f0f0f0;
+        border: 1px solid #E5E5E5;
+        padding: 20px 0px 0px 0px;
+        margin: 20px;
+        margin: 10px 20px;
+    }
+
+        .contacttab:first-child {
+            margin-top: 0px;
+        }
+
+        .contacttab:last-child {
+            margin-bottom: 20px;
+        }
+
+        .contacttab .role {
+            color: #6e788b !important;
+        }
+
+    .searchblock {
+        width: 100%;
+    }
+
+    .quickguide {
+        padding: 20px 40px;
+    }
+
+        .quickguide h2 {
+            text-align: center;
+        }
+
+        .quickguide h3 {
+            font-size: 22px !important;
+            font-weight: 900 !important;
+            letter-spacing: 1px;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+    .profile-table tr td {
+        width: 85% !important;
+        display: block;
+    }
+}
+
+
+.registernow-box .closed p {
+    display: none;
+}
+
+.registernow-box .numbercount-box p {
+    display: block;
+    font-size: 12px;
+}
+
+.registernow-box .registration-status .registration-button a {
+    font-size: 16px;
+}
+
+
+.currentlyplaying {
+    background: #121E40;
+    color: #fff;
+    border-color: #121E40;
+}
+
+#navbarResponsive .dropdown-menu.show {
+    background: transparent;
+    text-align: right;
+}
+
+#navbarResponsive .dropdown-item {
+    color: #446DDE;
+}
+
+#navbarResponsive .show > .nav-link {
+    color: #121E40;
+    border-bottom: 1px solid #121E40;
+}
+
+.registernow-box .registration-status.closed {
+    padding: 60px 50px;
+}
+
+
+.registernow-box .registration-status.coming p {
+    display: none;
+}
+
+.registernow-box .registration-status.coming {
+    padding: 45px 50px;
+}
+
+.registernow-box .registration-status.nowplaying {
+    padding: 45px 50px;
+}
+
+.photocredits {
+    text-align: right;
+    width: 100%;
+}
+
+    .photocredits .credit {
+        color: #fff;
+        border: 1px solid white;
+        border-radius: 250px;
+        padding: 5px 10px;
+        float: right;
+        font-size: 12px;
+        margin: 0;
+    }
+
+.footermenulink {
+    color: #6e788b !important;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+.searchblock table {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.searchblock tr {
+    border-bottom: 0px dashed #c4c4c4;
+}
+
+.searchblock .btn {
+    /* width: 250px;*/
+    font-size: 20px;
+}
+
+.searchblock input {
+    width: 350px;
+    margin: 10px 0px 15px 0px;
+    padding: 10px 10px;
+    font-size: 24px;
+}
+
+
+/*accordion test*/
+
+
+.card_collapsed {
+    border: 1px solid #121E40;
+    width: 100%;
+}
+
+    .card_collapsed h2 {
+        color: #fff;
+        padding: 20px;
+        background: #121E40;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: 'Fjalla One', sans-serif;
+    }
+
+    .card_collapsed p {
+        padding: 20px;
+    }
+
+
+.quickguide {
+}
+
+    .quickguide h3 {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: 'Fjalla One', sans-serif;
+    }
+
+/*Create account And Login*/
+
+.logintext {
+    color: #6e788b !important;
+}
+
+.password {
+    margin-top: 30px;
+}
+
+    .password a {
+        font-style: italic;
+        color: #4169E1;
+        font-size: 12px;
+    }
+
+
+.loginbuttons {
+    text-align: center !important;
+    margin: 20px 0px 0px 0px;
+}
+
+    .loginbuttons .signin {
+        display: inline-block;
+        width: 40%;
+    }
+
+
+    .loginbuttons .create {
+        display: inline-block;
+        width: 40%;
+    }
+
+    .loginbuttons .cancel {
+        display: inline-block;
+        width: 40%;
+    }
+
+.loginboxes {
+    margin: 50px;
+}
+
+    .loginboxes .nowplaying-box {
+        margin: 0 auto;
+    }
+
+.errormessage {
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+
+@media (max-width: 769px) {
+
+    .loginboxes .nowplaying-box {
+        margin-bottom: 50px;
+    }
+
+    .loginbuttons .signin, .loginbuttons .create {
+        width: 100%;
+    }
+
+    .loginbuttons .signin {
+        margin-bottom: 20px;
+    }
+
+    .password {
+        margin: 30px 0px;
+        text-align: center !important;
+    }
+
+        .password a {
+            font-size: 18px;
+        }
+}
+
+.requiredfields {
+    margin: 20px 0px 0px 0px;
+    text-align: left;
+}
+
+
+@media (max-width: 1199px) {
+
+    .btn-secondary {
+        margin-top:5px;
+        white-space: pre-wrap;
+        margin-left: 7px;
+        margin-bottom: 15px;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 8px;
+    }
+
+    .loginbuttons .signin, .loginbuttons .create, .loginbuttons .cancel, .backbtn {
+        margin-bottom: 15px;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .backbtn {
+        margin-left:0px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .loginboxes .nowplaying-box {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .loginbuttons .signin, .loginbuttons .cancel {
+        margin-bottom: 20px;
+    }
+
+    .password {
+        margin: 30px 0px;
+        text-align: center !important;
+    }
+
+    .box1 {
+        margin-bottom: 40px !important;
+    }
+
+    .createbtn .create {
+        margin-bottom: 20px;
+    }
+
+    .playerprofilebox .comment, .profile-box .comment {
+        border: 0px solid red !important;
+        width: 100%;
+        display: block;
+        line-height: 20px;
+    }
+
+    .beforenowplayingbox {
+        margin: 50px;
+    }
+
+        .beforenowplayingbox .nowplaying-box {
+            margin: 0 !important;
+        }
+
+    .profile-table {
+        margin: 20px;
+    }
+
+        .profile-table input {
+            max-width: 60%;
+        }
+
+        .profile-table tr {
+            line-height: 50px;
+            display: inline;
+        }
+
+    .memberrating {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+        .memberrating tr {
+            line-height: 50px;
+            display: block;
+            padding: 20px;
+        }
+
+        .memberrating .profile-table {
+            margin: 0;
+        }
+
+    .profile-box .memberrating .comment {
+        display: block !important;
+    }
+
+    .memberrating td.comment {
+        border: 0px solid red !important;
+        width: 100%;
+        display: block;
+        line-height: 20px;
+        text-align: center;
+    }
+}
+
+.resetbuttons {
+    text-align: center;
+}
+
+    .resetbuttons button {
+        display: inline-block;
+    }
+
+.playerlookup tr {
+    border-bottom: 0px dashed #c4c4c4;
+}
+
+.playerlookup table {
+    margin: 0 auto;
+}
+
+.helptext {
+    color: #6e788b !important;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.center {
+    text-align: center;
+}
+
+.playerprofilebox {
+    border: 0px solid red !important;
+}
+
+    .playerprofilebox .profile-header {
+        display: none;
+    }
+
+
+.backbtns {
+    width: 40%;
+    /* text-align: center; */
+    /* float: left !important; */
+    /* margin: 0; */
+    max-width: 500px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #fff;
+    color: #0E1E3F;
+    border: 1px solid #0E1E3F;
+}
+
+
+
+.form-group .col-md-4 .btn, .form-group .col-md-8 .btn {
+    width: 40%;
+}
+
+
+.filter-sidebar .btn {
+    width: 45%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.tournamentnav .nav-fill .nav-item:last-child {
+    flex: 1 1 auto;
+}
+
+.profile-table {
+}
+
+.directorcreate {
+    margin: 20px 0px 30px 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+
+    .directorcreate .signin {
+        float: right;
+        width: 20%;
+    }
+
+    .directorcreate .cancel {
+        background: white;
+        border: 1px solid #FF003C;
+        float: left;
+        width: 20%;
+        color: #FF003C;
+    }
+
+
+        .directorcreate .cancel:hover {
+            background: rgba(255, 0, 60, 0.3);
+            border: 1px solid #FF003C;
+            color: #FF003C;
+        }
+
+    .directorcreate .backbtn {
+        display: inline-block;
+        width: 20%;
+        float: left;
+        margin-right: 20px;
+        background: white;
+        color: #0E1E3F;
+        border: 1px solid #0E1E3F;
+    }
+
+        .directorcreate .backbtn:hover {
+            background: #E5E5E5;
+            border: 1px solid #707A8A;
+        }
+
+    .directorcreate .boilerplatebtn {
+        display: inline-block;
+        float: left;
+        margin-right: 20px;
+        background: white;
+        color: #0E1E3F;
+        border: 1px solid #0E1E3F;
+    }
+
+        .directorcreate .boilerplatebtn:hover {
+            background: #E5E5E5;
+            border: 1px solid #707A8A;
+        }
+
+.playerprofiletable {
+    width: 100%;
+}
+
+
+.playeraccount {
+}
+
+    .playeraccount .signin {
+        margin: 0;
+        width: 100% !important;
+    }
+
+    .playeraccount .backbtn {
+        width: 100% !important;
+    }
+
+
+    .playeraccount .cancel {
+        background: white;
+        border: 1px solid #FF003C;
+        float: left;
+        width: 20%;
+        color: #FF003C;
+        width: 100% !important;
+    }
+
+
+        .playeraccount .cancel:hover {
+            background: rgba(255, 0, 60, 0.3);
+            border: 1px solid #FF003C;
+            color: #FF003C;
+        }
+
+.pastbtns {
+    width: 40% !important;
+}
+
+    .pastbtns.results {
+        background: #4169E1;
+        border: 1px solid #4169E1;
+    }
+
+    @media (max-width: 767px){
+
+        .infocheckboxes {
+            width: 20px;
+        }
+
+        .backbtn {
+            margin-left: 0px
+        }
+
+        .cancel{
+            margin-left:0px;
+        }
+
+        .playerinfotable {
+            height: 100%;
+            max-height: 100%;
+            width: 100%;
+            display: block;
+        }
+
+    }
+
+@media (max-width: 500px) {
+
+    input[name=otherclub] {
+        display: block;
+    }
+
+    .backbtn{
+        margin-left:0px;
+    }
+
+
+
+    .profile-table {
+        margin: 20px;
+    }
+
+        input {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .profile-table tr {
+            line-height: 50px;
+            display: inline;
+        }
+
+    .productslist .details {
+        padding: 20px;
+        line-height: 23px;
+        color: #495057;
+    }
+
+    .campbutton a {
+        /*width: 300px;*/
+        width: 100%; /*mobile full width*/
+    }
+
+    .productslist .row {
+        display: flex;
+        /* Optional, if you want the DIVs 100% width: */
+        flex-direction: column;
+    }
+
+        .productslist .row > .info {
+            order: 3;
+        }
+
+        .productslist .row > .logos {
+            order: 4;
+        }
+
+        .productslist .row > .tags {
+            order: 1;
+        }
+
+        .productslist .row > .registration {
+            order: 3;
+        }
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+/* new mobile changes */
+
+.mobileonly {
+    display: none;
+}
+
+.extra-mobile {
+    display: none !important;
+}
+
+
+@media (max-width: 500px) {
+
+    .nowplaying-pagetitle {
+        padding-top: 0px !important;
+    }
+
+    .nowplaying-header {
+        padding: 20px 0px 0px 0px !important;
+    }
+
+    .blockswithpadding .row {
+        padding: 20px;
+    }
+
+    .productslist .logos {
+        display: none;
+    }
+
+    .nowplaying-header .nowplaying-box {
+        display: none !important;
+    }
+
+    .homepage-nowplaying .nowplaying-box {
+        display: block !important;
+        margin-top: 30px;
+    }
+
+/*    .tournament-list .tags {
+        display: none !important;
+    }*/
+
+    .productslist .tags {
+        display: block !important;
+    }
+
+    .navtop {
+        margin-top: 0px !important;
+    }
+
+    .nowplaying-header .col-md-4 {
+        min-height: 50px;
+        padding-bottom: 20px;
+    }
+
+    .mobileonly {
+        display: inline-block;
+    }
+
+    .desktoponly {
+        display: none !important;
+    }
+
+
+    .tournament-details-header .tournament-logo {
+        display: none;
+    }
+
+    .tournamentname {
+        text-align: center !important;
+    }
+
+        .tournamentname h1 {
+            font-size: 28px;
+        }
+
+    .tournament-details-header .tournament-info p {
+        font-size: 18px;
+    }
+
+    .eventplayer-list .col-age, .eventplayer-list .col-hometown, .eventplayer-list .col-club, .eventplayer-list .col-skill {
+        display: none;
+    }
+
+    .eventplayer-list .col-name {
+        text-align: center;
+    }
+
+    .eventplayer-list .rwd-table tr {
+        width: 50%;
+        display: inline-block;
+        padding-top: 10px;
+    }
+
+    .eventplayer-list .header-table {
+        display: none;
+    }
+
+    .team-wrap .vertical-text-team {
+        width: 100%;
+        border-bottom: 0px solid red;
+    }
+
+    .scores-playername {
+        text-align: center;
+        width: 100%;
+    }
+
+    .tournament-details-header .tournament-info .infocenter h1 {
+        font-size: 28px;
+        text-align: center !important;
+    }
+
+    .tournament-details-header .tournament-info p {
+        text-align: center !important;
+    }
+
+    .aboutimage {
+        width: 100%;
+        float: none;
+        padding: 20px;
+    }
+
+    .createbox {
+        margin: 0 !important;
+    }
+
+    .static-page {
+        padding: 20px 40px;
+    }
+
+    .firstbtn {
+        margin-bottom: 20px;
+    }
+
+    .nowplaying-wrap .mobileonly {
+        margin-top: 10px;
+        width: 80%;
+    }
+
+    .registernow-box .registration-status {
+        width: 70% !important;
+        flex: 0 0 70% !important;
+        max-width: 70% !important;
+    }
+
+    .registernow-box .numbercount-box {
+        width: 30% !important;
+        flex: 0 0 30% !important;
+        max-width: 30% !important;
+    }
+
+
+}
+
+
+@media (max-width: 992px) {
+
+    .extra-full {
+        display: none !important;
+    }
+
+    .extra-mobile {
+        display: block !important;
+    }
+
+    .createtournament-btns {
+        text-align: center;
+    }
+
+        .createtournament-btns a {
+            display: inline-block;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+    .firstbtn {
+        margin-bottom: 20px;
+    }
+
+    .createbox {
+        margin: 0 !important;
+    }
+
+    .static-page {
+        padding: 20px 40px;
+    }
+
+    .tablecolumnsize .col-name, .tablecolumnsize .col-city, .tablecolumnsize .col-gender, .tablecolumnsize .col-club {
+        width: 100% !important;
+    }
+
+    .email-player .line1 {
+        display: inline-block;
+        padding-top: 20px;
+        width: 100%;
+    }
+
+        .email-player .line1 .comment {
+            display: none !important;
+        }
+
+        .email-player .line1 .labelfield {
+            width: 100%;
+            line-height: normal;
+            display: block;
+            float: left;
+        }
+
+        .email-player .line1 .toname {
+            width: 100%;
+            line-height: normal;
+            display: block;
+            float: left;
+            border: 1px solid;
+            padding: 20px;
+            text-align: center;
+        }
+
+    .email-player .line2 {
+        display: inline-block;
+        padding-top: 20px;
+        width: 100%;
+    }
+
+        .email-player .line2 .comment {
+            display: none !important;
+        }
+
+        .email-player .line2 .labelfield {
+            width: 100%;
+            line-height: normal;
+            display: block;
+            float: left;
+        }
+
+        .email-player .line2 .inputfield {
+            width: 100%;
+            display: inline-block;
+        }
+
+        .email-player .line2 input {
+            width: 100%;
+            max-width: 100%;
+        }
+
+    .email-player .line3 {
+        display: inline-block;
+        padding-top: 20px;
+    }
+
+        .email-player .line3 .labelfield {
+            width: 100%;
+            line-height: normal;
+            display: block;
+            float: left;
+        }
+
+        .email-player .line3 .inputfield {
+            width: 100%;
+            display: inline-block;
+        }
+
+            .email-player .line3 .inputfield input {
+                border: 1px solid;
+                text-align: center;
+            }
+
+        .email-player .line3 input {
+            width: 100%;
+            max-width: 100%;
+        }
+
+    .email-player .line4 {
+        display: inline-block;
+        padding-top: 20px;
+    }
+
+        .email-player .line4 .labelfield {
+            width: 100%;
+            line-height: normal;
+            display: block;
+            float: left;
+        }
+
+        .email-player .line4 .inputfield {
+            width: 100%;
+            float: left;
+        }
+
+        .email-player .line4 textarea {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .email-player .line4 .comment {
+            display: none !important;
+        }
+
+    .email-player .line5 {
+        display: block;
+    }
+
+        .email-player .line5 .labelfield {
+            width: 25%;
+        }
+
+    .emailplayerbox {
+        margin: 50px auto 0 auto;
+    }
+}
+
+/* new fonts for text pages */
+
+.textpage h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.textpage h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.textpage h3 {
+    font-size: 22px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+.textpage h4 {
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+.textpage h5 {
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+.textpage p, .textpage li {
+    font-size: 18px;
+}
+
+.textpage b {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.indent {
+    margin-left: 20px;
+}
+
+.aboutimage img {
+    width: 100%;
+}
+
+.aboutimage {
+    float: right;
+}
+
+
+.contactsubmit {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+.createtournament-btns {
+    padding: 40px 20px;
+    justify-content: center;
+}
+
+.createtitle .nowplaying-date {
+    margin-bottom: 0 !important;
+}
+
+
+.headerdarkbackground {
+    color: #fff !important;
+}
+
+
+.liabilitywaiver {
+    width: 100%;
+}
+
+    .liabilitywaiver .registration-box {
+        margin: 55px auto 0;
+        width: 90%;
+    }
+
+        .liabilitywaiver .registration-box textarea {
+            width: 100%;
+        }
+
+.wsign {
+    width: 100%;
+    padding: 20px;
+}
+
+.tablecolumnsize .col-name, .tablecolumnsize .col-city {
+    width: 25%;
+}
+
+.tablecolumnsize .col-gender {
+    width: 10%;
+}
+
+.tablecolumnsize .col-club {
+    width: 40%;
+}
+
+.tablecolumnsize, .tablecolumnsize tr {
+    border-bottom: 0px dashed #c4c4c4 !important;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.tablecolumnsize, .tablecolumnsize tr {
+    border-bottom: 0px dashed #c4c4c4 !important;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.usapa {
+    max-width: 100px;
+}
+
+.playerscorestable {
+    table-layout: fixed;
+}
+
+    .playerscorestable td {
+        text-align: left;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.tooltip {
+    width: 100%;
+}
+
+#notes, #weatherpolicy_form {
+    width: 100%;
+}
+
+.email-player .line1 {
+}
+
+.email-player .line2 {
+}
+
+.email-player .line3 {
+}
+
+.email-player .line4 {
+}
+
+.email-player .line5 {
+}
+
+
+.loginmultipleaccts form .form-group {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.loginmultipleaccts p {
+    text-align: center;
+}
+
+.loginmultipleaccts form .form-group:nth-child(even) {
+    background: #E5E5E5;
+}
+
+.error_message h3 {
+    font-size: 22px;
+    text-align: center !important;
+    padding: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+#utprcolor_legend {
+    margin-top: 20px;
+}
+
+#btnShowPlayerInformation {
+    margin: 0;
+}
+
+.paypalbtns {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin: 10px auto;
+}
+
+    .paypalbtns a {
+        color: inherit;
+        padding: 5px;
+        display: block;
+        text-decoration: none;
+        margin: 10px auto;
+    }
+
+    .paypalbtns .greenbtn, .paypalbtns .redoutlinebtn, .paypalbtns .greenoutlinebtn {
+        margin: 10px auto;
+        display: block;
+        text-decoration: none;
+    }
+
+.signbox {
+    height: 80px;
+}
+
+    .signbox sup sup {
+        top: 3em;
+    }
+
+.courtassign .col-time {
+    width: 5% !important;
+    max-width: 100px !important;
+    font-size: 14px;
+    text-align: center;
+}
+
+.courtassign .col-format, .courtassign .col-vs {
+    width: 10% !important;
+    max-width: 100px !important;
+    font-size: 14px;
+    text-align: center;
+}
+
+.courtassign table tbody tr td:last-child {
+    display: none;
+}
+
+.courtassign .rwd-table tr {
+    border-bottom: 1px solid #c4c4c4;
+}
+
+
+.courtassign-header .col-eventformat {
+    text-align: center;
+    font-size: 12px;
+    width: 20%;
+}
+
+.courtassign-header .col-players {
+    text-align: center;
+    font-size: 12px;
+    width: 70%;
+}
+
+.courtassign-header .col-players {
+    text-align: center;
+    font-size: 12px;
+}
+
+    .col-bronze span, .col-silver span, .col-gold span{
+   display: none !important;
+    }
+
+@media (max-width: 769px) {
+
+    .courtassign-header {
+        display: none;
+    }
+
+    .courtassign {
+        overflow: hidden;
+    }
+
+        .courtassign .rwd-table {
+            width: 100%;
+            border: 0px solid red;
+        }
+
+.eventplayer-list .rwd-table{
+    margin-bottom: 0px !important;
+}
+
+.eventplayer-list .vertical-text-team{
+    margin-top: 0px !important;
+    position: relative;
+    border: 0 !important;
+    width: 100%;
+}
+
+    .registernow-box .numbercount-box h2 {
+        font-size: 40px;
+    }
+
+    #menuSchedule{
+
+    }
+
+}
+
+@media (max-width: 499px) {
+
+    #menuSchedule .header-table{
+    background: #121E40;
+    margin-bottom: 0;
+    }
+
+    #menuSchedule .header-table .col-date{
+        color:#fff !important;
+    }
+
+    #menuSchedule .rwd-table{
+            margin-top: 0;
+    }
+
+    #menuSchedule .header-table .col-time, #menuSchedule .header-table .col-name, #menuSchedule .header-table .headerblock{
+        display: none !important;
+    }
+
+    .courtassign .col-format {
+        width: 100% !important;
+    }
+
+    .pastbtns{
+        width: 100% !important;
+    }
+
+    .results{
+        margin-top:10px !important;
+    }
+
+
+    .team-wrap .rwd-table tr, .team-wrap .rwd-table tr:first-child {
+        border-right: 0px solid red;
+        border-left: 0px solid red;
+        border-top: 0px solid red;
+        border-bottom: 0px solid #e5e5e5; /*players needing partners remove border*/
+        padding: 10px;
+           /* height: 80px !important; */
+    }
+
+    #menuResults .team-wrap .rwd-table tr, .team-wrap .rwd-table tr:first-child{
+        height: 100% !important;
+    }
+
+    #menuResults .rwd-table td:last-child{
+        display: block !important;
+    }
+
+    .col-bronze span, .col-silver span, .col-gold span{
+    font-weight: 700;
+    padding-right: 10px;
+    display: inline-block !important;
+    }
+
+    #menuResults{
+
+    }
+
+    #menuResults .rwd-table th, #menuResults .rwd-table td {
+    margin: 0 auto !important;
+        text-align: left !important;
+}
+
+#menuResults .rwd-table{
+    border:0px solid red !important;
+        margin: 0 0 10 0 !important;
+}
+
+#menuResults .rwd-table .col-bracket a{
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+#menuResults .team-wrap .rwd-table tr, .team-wrap .rwd-table tr:first-child{
+padding: 0 !important;
+}
+
+
+.eventplayer-list tbody tr{
+    padding: 0 !important;
+        height: inherit !important;
+}
+
+.eventplayer-list .vertical-text-team{
+    margin-top: 0px !important;
+    position: relative;
+        margin-bottom: 20px !important;
+}
+
+.eventplayer-list .rwd-table{
+    margin-bottom:0px !important;
+}
+
+.eventplayer-list tr{
+    display:inline-block !important;
+}
+
+#menuPlayersNeedingPartners .header-table .col-need{
+display: none !important;
+}
+
+#menuPlayersNeedingPartners .col-need{
+    display: inline-block !important;
+}
+
+#menuPlayersNeedingPartners .col-name, #menuPlayersNeedingPartners .col-age, #menuPlayersNeedingPartners .col-skill, #menuPlayersNeedingPartners .col-email{
+display: inline-block !important;
+width:24% !important;
+}
+
+#menuPlayersNeedingPartners .header-table{
+    display: none !important;
+}
+
+#menuPlayersNeedingPartners .team-wrap{
+width: 100% !important;
+}
+
+.nav-logo{
+    margin:0 !important;
+}
+
+
+#menuPlayerList .col-from, #menuPlayerList .col-player{
+    display: inline-block !important;
+    width: 49% !important;
+}
+
+#menuPlayerList tr:first-child{
+    padding: 10px !important;
+}
+
+#menuPlayerList .header-table{
+background: #121E40;
+}
+
+#menuPlayerList .header-table .col-from{
+color:#fff !important;
+text-align: left !important;
+    padding: 0px 10px;
+}
+
+#menuPlayerList .header-table .col-player{
+color:#fff !important;
+text-align: left !important;
+    padding: 0px 20px;
+}
+
+
+.rptbrackets li{
+text-align: left;
+}
+
+.team-wrap .rwd-table tbody tr > .col-age, .team-wrap .rwd-table tbody tr > .col-name{
+    width: 49% !important;
+    display: inline-block;
+}
+
+
+}
+
+@media (max-width: 400px) {
+
+.detailsbutton a, .tournament-list .registration .closed, .tournament-list .registration .open, .tournament-list .registration .soon, .tournament-list .registration .closedpayonly{
+    width:100%;
+}
+
+.team-wrap .rwd-table tbody tr > .col-age, .team-wrap .rwd-table tbody tr > .col-name{
+    width: 49% !important;
+    display: inline-block;
+}
+
+.eventplayer-list .rwd-table tr{
+    width: 100% !important;
+}
+
+sup{
+        font-size: 25% !important;
+            top: 0px !important;
+}
+
+}
+
+.sign-here {
+    position: relative;
+    top: 35px;
+}
+
+.participant-sign {
+    position: relative;
+    top: 2px;
+}
+
+/***************************************
+*       Firefox Checkboxes             *
+***************************************/
+
+#regnote {
+    width: 100%;
+    border: 2px solid black;
+    -moz-appearance: none;
+    margin-left: 10px;
+}
+
+@-moz-document url-prefix() {
+    #regnote:hover {
+        box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    }
+}
+
+@-moz-document url-prefix() {
+    #regnote:checked::after {
+        margin-left: 7.3mm;
+        margin-top: -3.4mm;
+        width: 3mm;
+        height: 10mm;
+        border: solid black;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+        border-width: 0 2mm 2mm 0;
+        -webkit-transform: rotate(-219deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: "";
+        display: inline-block;
+    }
+}
+
+
+#openregonly {
+    width: 30px;
+    flex: 0 0 auto !important;
+    -moz-appearance: none;
+    margin-right: 8px;
+}
+
+
+@-moz-document url-prefix() {
+    #openregonly {
+        width: 35px;
+        border: solid 1px black;
+        border-radius: 2px;
+        margin-right: 8px;
+    }
+}
+
+@-moz-document url-prefix() {
+    #openregonly:hover {
+        box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    }
+}
+
+@-moz-document url-prefix() {
+    #openregonly:checked::after {
+        margin-left: 0.3mm;
+        margin-top: -1.35mm;
+        width: 4mm;
+        height: 7mm;
+        border: solid black;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+        border-width: 0 2mm 2mm 0;
+        -webkit-transform: rotate(-219deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: "";
+        display: inline-block;
+    }
+}
+
+#ssipaFilter {
+    width: 30px;
+    flex: 0 0 auto !important;
+    -moz-appearance: none;
+    margin-right: 8px;
+}
+
+
+@-moz-document url-prefix() {
+    #ssipaFilter {
+        width: 35px;
+        border: solid 1px black;
+        border-radius: 2px;
+        margin-right: 8px;
+    }
+}
+
+@-moz-document url-prefix() {
+    #ssipaFilter:hover {
+        box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    }
+}
+
+@-moz-document url-prefix() {
+    #ssipaFilter:checked::after {
+        margin-left: 0.3mm;
+        margin-top: -1.35mm;
+        width: 4mm;
+        height: 7mm;
+        border: solid black;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+        border-width: 0 2mm 2mm 0;
+        -webkit-transform: rotate(-219deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: "";
+        display: inline-block;
+    }
+}
+
+#aauFilter {
+    width: 30px;
+    flex: 0 0 auto !important;
+    -moz-appearance: none;
+    margin-right: 8px;
+}
+
+
+@-moz-document url-prefix() {
+    #aauFilter {
+        width: 35px;
+        border: solid 1px black;
+        border-radius: 2px;
+        margin-right: 8px;
+    }
+}
+
+@-moz-document url-prefix() {
+    #aauFilter:hover {
+        box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    }
+}
+
+@-moz-document url-prefix() {
+    #aauFilter:checked::after {
+        margin-left: 0.3mm;
+        margin-top: -1.35mm;
+        width: 4mm;
+        height: 7mm;
+        border: solid black;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+        border-width: 0 2mm 2mm 0;
+        -webkit-transform: rotate(-219deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: "";
+        display: inline-block;
+    }
+}
+
+#refereeCheckbox {
+    width: 30px;
+    flex: 0 0 auto !important;
+    -moz-appearance: none;
+}
+
+
+@-moz-document url-prefix() {
+    #refereeCheckbox {
+        width: 40px;
+        border: solid 1px black;
+        border-radius: 2px;
+        margin-left: 10px;
+    }
+}
+
+@-moz-document url-prefix() {
+    #refereeCheckbox:hover {
+        box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    }
+}
+
+@-moz-document url-prefix() {
+    #refereeCheckbox:checked::after {
+        margin-left: 3mm;
+        width: 4mm;
+        height: 8mm;
+        border: solid black;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+        border-width: 0 2mm 2mm 0;
+        -webkit-transform: rotate(-219deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: "";
+        display: inline-block;
+    }
+}
+
+.ranking-points-table thead {
+    text-align: center;
+}
+
+.ranking-points-table tbody {
+    text-align: center;
+}

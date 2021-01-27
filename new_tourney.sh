@@ -1,0 +1,7 @@
+mkdir "./PB_Tourneys_2020/$1"
+mkdir "./PB_Tourneys_2020/$1/MDO"
+mkdir "./PB_Tourneys_2020/$1/MDSP"
+mkdir "./PB_Tourneys_2020/$1/WDO"
+mkdir "./PB_Tourneys_2020/$1/WDSP"
+mkdir "./PB_Tourneys_2020/$1/MXDO"
+mkdir "./PB_Tourneys_2020/$1/MXDSSP"
