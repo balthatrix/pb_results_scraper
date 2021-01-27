@@ -36,13 +36,14 @@ class PbResultsParser
       next if score_text.include?('0-0') || score_text.downcase.include?('Withdrawal')
 
       team_a_text = parser.find_team_a(s).children.first.to_s
-      team_a_hash = parser.teams[team_a_text]
+      team_a_hash = parser.teams[team_a_text.to_sym]
 
       team_b_text = parser.find_team_b(s).children.first.to_s
-      team_b_hash = parser.teams[team_b_text]
+      team_b_hash = parser.teams[team_b_text.to_sym]
 
       winner_text = parser.winner(s).children.first.to_s
-      winner_hash = parser.teams[winner_text]
+      winner_hash = parser.teams[winner_text.to_sym]
+      binding.pry if winner_hash.nil?
 
       winner_score_index = parser.winner_point_position_in_match(score_text)
       loser_score_index = parser.loser_point_position_in_match(score_text)
@@ -61,18 +62,38 @@ class PbResultsParser
         team_b: team_b_hash,
         team_a_scores: team_a_scores,
         team_b_scores: team_b_scores,
-        winner: winner_hash
+        winner: winner_hash,
+        tournament_name: parser.tournament_name,
+        event_name: parser.event_name,
+        event_date: parser.event_date
       })
     end
 
     matches
   end
 
-  def self.to_csv(io, result_filename)
-    matches = results(io)
+  def clean_str str
+    new_str = ""
+    str.chars.each do |c|
+      if c.bytes.size > 1
+        # binding.pry
+        new_str << " "
+      else
+        new_str << c
+      end
+    end
+    binding.pry if str == "Lelli-De La Rosa"
+    new_str
+  end
 
-    CSV.open("#{result_filename}.csv", "wb") do |csv|
+  def self.to_csv(io, result_filename, cat_mode=false)
+    matches = results(io)
+    
+    CSV.open("#{result_filename}.csv", cat_mode ? "ab" : "wb") do |csv|
       csv << [
+        "Tournament Name",
+        "Event Name",
+        "Event Date",
         "Team A Player 1",
         "Team A Player 2",
         "Team B Player 1",
@@ -86,10 +107,19 @@ class PbResultsParser
         "Team B Points Game 3",
         "Team A Points Game 4",
         "Team B Points Game 4"
-      ]
+      ] unless cat_mode
 
       matches.each do |match|
         row = []
+
+        puts "Adding match to csv:"
+        puts match
+        puts "===="
+
+        # heading info
+        row.push(match[:tournament_name])
+        row.push(match[:event_name])
+        row.push(match[:event_date])
 
         # team a
         row.push("#{match[:team_a][:player_a_first]} #{match[:team_a][:player_a_last]}")
@@ -117,13 +147,40 @@ class PbResultsParser
     @document = Nokogiri::HTML(io)
   end
 
+  def tournament_name
+    # first h3 in the doc,
+    # first text child of the h3. pretty brittle seemingly
+    @tournament_name ||= @document.search("h3").first.children.first.to_s
+  end
+
+  def event_name
+    # first h3 in the doc,
+    # last text child of the h3. pretty brittle seemingly
+    @event_name ||= @document.search("h3").first.children.last.to_s
+  end
+
+  def event_date
+    # last italic in the doc,
+    # last child, assuming the date in the certain pos. Pretty brittle
+    @event_date ||= @document.search("i").last.children.first.to_s.split(" ")[-2]
+  end
+
   def find_team_a(score_td)
+    # the score td element might be contained within another table...
+    # this handles that exception
+    if td_siblings(score_td).size == 1
+      score_td = score_td.parent
+      while score_td.name != 'td'
+        score_td = score_td.parent
+      end
+    end
+
     prev_index = index_of_td(score_td) - 1
     prev_td = td_siblings(score_td)[prev_index]
 
     # for team a, allway ascend at least 1 row
     tr_elem = previous_tr_elem(prev_td.parent)
-
+    # binding.pry if tr_elem.nil?
     # scan tds upward to find the path of bracket based on bottom border style
     while above_td = td_children(tr_elem)[prev_index]
       if above_td.nil?
@@ -150,12 +207,22 @@ class PbResultsParser
   end
 
   def find_team_b(score_td)
+    # the score td element might be contained within another table...
+    # this handles that exception
+    if td_siblings(score_td).size == 1
+      score_td = score_td.parent
+      while score_td.name != 'td'
+        score_td = score_td.parent
+      end
+    end
+
     prev_index = index_of_td(score_td) - 1
     prev_td = td_siblings(score_td)[prev_index]
 
     if name_pattern_matches?(prev_td.children.first.to_s)
       return prev_td
     else
+      # binding.pry if score_td.children.first.text == '10-12,11-9,11-3'
       #scan downward until you find a bottom border td, then scan left until you find name pattern
       # for team a, allway ascend at least 1 row
       tr_elem = prev_td.parent
@@ -188,8 +255,16 @@ class PbResultsParser
 
   # winning team is always the td element of same index above the score
   def winner(score_td)
+    if td_siblings(score_td).size == 1
+      score_td = score_td.parent
+      while score_td.name != 'td'
+        score_td = score_td.parent
+      end
+    end
+
     score_index = index_of_td(score_td)
     tr_above = previous_tr_elem(score_td.parent)
+    # binding.pry if score_td.children.first.to_s == '11-7,11-7'
     td_children(tr_above)[score_index]
   end
 
@@ -221,7 +296,7 @@ class PbResultsParser
   def register_teams
     team_tds = all_td_with_long_form_teams
 
-    team_tds.each{ |team_td| register_team(team_td) }
+    team_tds.each{ |team_td| register_team_2(team_td) }
   end
 
   # input: "11-9,11-7"
@@ -258,11 +333,11 @@ class PbResultsParser
     raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
     players = text.split('-')
 
-    player_a_first = players.first.split(',').last.gsub(/&nbsp;/, " ")
-    player_a_last = players.first.split(',').first.gsub(/&nbsp;/, " ")
+    player_a_first = clean_str players.first.split(',').last.gsub(/&nbsp;/, " ")
+    player_a_last = clean_str players.first.split(',').first.gsub(/&nbsp;/, " ")
 
-    player_b_first = players.last.split(',').last.gsub(/&nbsp;/, " ")
-    player_b_last = players.last.split(',').first.gsub(/&nbsp;/, " ")
+    player_b_first = clean_str players.last.split(',').last.gsub(/&nbsp;/, " ")
+    player_b_last = clean_str players.last.split(',').first.gsub(/&nbsp;/, " ")
 
     @teams ||= {}
 
@@ -294,6 +369,66 @@ class PbResultsParser
     @teams
   end
 
+
+
+  def register_team_2(team_td)
+    text = team_td.children.first.to_s.gsub(/\s/, " ")
+    raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
+    chunks = text.split(',')
+
+    player_a_last = clean_str chunks.shift
+    player_b_first = clean_str chunks.pop
+
+    remaining_chunks = chunks.join(',').split('-')
+    player_a_first = clean_str remaining_chunks.shift
+    player_b_last = clean_str remaining_chunks.join('-')
+
+    @teams ||= {}
+
+    team = {
+      player_a_first: player_a_first,
+      player_a_last: player_a_last,
+      player_b_first: player_b_first,
+      player_b_last: player_b_last
+    }
+
+    short_text = "#{player_a_last}-#{player_b_last}"
+
+    # register short form of team
+    @teams[short_text] = {
+      player_a_first: player_a_first,
+      player_a_last: player_a_last,
+      player_b_first: player_b_first,
+      player_b_last: player_b_last
+    }
+
+    # register short form of team
+    @teams[short_text.to_sym] = {
+      player_a_first: player_a_first,
+      player_a_last: player_a_last,
+      player_b_first: player_b_first,
+      player_b_last: player_b_last
+    }
+
+    # register longer (first and last name) form of team
+    @teams[text] = {
+      player_a_first: player_a_first,
+      player_a_last: player_a_last,
+      player_b_first: player_b_first,
+      player_b_last: player_b_last
+    }
+
+    # register longer (first and last name) form of team
+    @teams[text.to_sym] = {
+      player_a_first: player_a_first,
+      player_a_last: player_a_last,
+      player_b_first: player_b_first,
+      player_b_last: player_b_last
+    }
+
+    @teams
+  end
+
   def index_of_td(td_element)
     td_siblings(td_element).index(td_element)
   end
@@ -315,7 +450,7 @@ class PbResultsParser
   end
 
   def name_pattern_matches?(text)
-    text.scan(/[a-zA-Z]+[0-9]*\-[a-zA-Z]+[0-9]*/).count > 0
+    text.scan(/[a-zA-Z']+[0-9]*\-[a-zA-Z]+[0-9]*/).count > 0
   end
 
   def full_name_pattern_matches?(text)
@@ -324,6 +459,18 @@ class PbResultsParser
 
   def previous_tr_elem(tr_elem)
     res = tr_elem.previous
+
+    if res.nil?
+      res = tr_elem
+      until res.parent.name == 'tr'
+        res = res.parent
+
+        raise "Could not find previous tr element" if res.nil?
+      end
+
+      res = res.parent.previous
+    end
+
     return res if res.nil? || res.name === 'tr'
 
     previous_tr_elem(res)
@@ -331,6 +478,17 @@ class PbResultsParser
 
   def next_tr_elem(tr_elem)
     res = tr_elem.next
+
+    if res.nil?
+      res = tr_elem
+      until res.parent.name == 'tr'
+        res = res.parent
+        raise "Could not find previous tr element" if res.nil?
+      end
+
+      res = res.parent.next
+    end
+
     return res if res.nil? || res.name === 'tr'
 
     next_tr_elem(res)
