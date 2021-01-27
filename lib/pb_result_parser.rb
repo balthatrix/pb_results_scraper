@@ -82,13 +82,11 @@ class PbResultsParser
         new_str << c
       end
     end
-    binding.pry if str == "Lelli-De La Rosa"
     new_str
   end
 
   def self.to_csv(io, result_filename, cat_mode=false)
     matches = results(io)
-    
     CSV.open("#{result_filename}.csv", cat_mode ? "ab" : "wb") do |csv|
       csv << [
         "Tournament Name",
@@ -450,7 +448,7 @@ class PbResultsParser
   end
 
   def name_pattern_matches?(text)
-    text.scan(/[a-zA-Z']+[0-9]*\-[a-zA-Z]+[0-9]*/).count > 0
+    text.scan(/[a-zA-Z'\(\) ]+[0-9]*\-[a-zA-Z'\(\) ]+[0-9]*/).count > 0
   end
 
   def full_name_pattern_matches?(text)
