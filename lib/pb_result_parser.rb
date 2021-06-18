@@ -33,13 +33,15 @@ class PbResultsParser
       score_text = s.children.first.to_s
 
       # skip score being 0 - 0 for forfeit, etc...
-      next if score_text.include?('0-0') || score_text.downcase.include?('Withdrawal')
+      next if score_text.include?('0-0') || score_text.downcase.include?('withdrawal')
 
       team_a_text = parser.find_team_a(s).children.first.to_s
       team_a_hash = parser.teams[team_a_text.to_sym]
+      binding.pry if team_a_hash.nil?
 
       team_b_text = parser.find_team_b(s).children.first.to_s
       team_b_hash = parser.teams[team_b_text.to_sym]
+      binding.pry if team_b_hash.nil?
 
       winner_text = parser.winner(s).children.first.to_s
       winner_hash = parser.teams[winner_text.to_sym]
@@ -280,7 +282,7 @@ class PbResultsParser
   def all_td_with_score
     all_td_with_text.select do |noko_elem|
       text = noko_elem.children.first.to_s
-      text.scan(/[0-9]+\-[0-9]+/).count > 0
+      text.scan(/[0-9]+\-[0-9]+/).count > 0 && text.scan(/[Ww]ithdrawal/).count == 0
     end
   end
 
@@ -326,49 +328,51 @@ class PbResultsParser
 
   private
 
-  def register_team(team_td)
-    text = team_td.children.first.to_s
-    raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
-    players = text.split('-')
+  # def register_team(team_td)
+  #   text = team_td.children.first.to_s
+  #   raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
+  #   players = text.split('-')
+  #
+  #   player_a_first = clean_str players.first.split(',').last.gsub(/&nbsp;/, " ")
+  #   player_a_last = clean_str players.first.split(',').first.gsub(/&nbsp;/, " ")
+  #
+  #   player_b_first = clean_str players.last.split(',').last.gsub(/&nbsp;/, " ")
+  #   player_b_last = clean_str players.last.split(',').first.gsub(/&nbsp;/, " ")
+  #
+  #   @teams ||= {}
+  #
+  #   team = {
+  #     player_a_first: player_a_first,
+  #     player_a_last: player_a_last,
+  #     player_b_first: player_b_first,
+  #     player_b_last: player_b_last
+  #   }
+  #
+  #   short_text = "#{player_a_last}-#{player_b_last}"
+  #
+  #   # register short form of team
+  #   @teams[short_text] = {
+  #     player_a_first: player_a_first,
+  #     player_a_last: player_a_last,
+  #     player_b_first: player_b_first,
+  #     player_b_last: player_b_last
+  #   }
+  #
+  #   # register longer (first and last name) form of team
+  #   @teams[text] = {
+  #     player_a_first: player_a_first,
+  #     player_a_last: player_a_last,
+  #     player_b_first: player_b_first,
+  #     player_b_last: player_b_last
+  #   }
+  #
+  #   @teams
+  # end
 
-    player_a_first = clean_str players.first.split(',').last.gsub(/&nbsp;/, " ")
-    player_a_last = clean_str players.first.split(',').first.gsub(/&nbsp;/, " ")
 
-    player_b_first = clean_str players.last.split(',').last.gsub(/&nbsp;/, " ")
-    player_b_last = clean_str players.last.split(',').first.gsub(/&nbsp;/, " ")
-
-    @teams ||= {}
-
-    team = {
-      player_a_first: player_a_first,
-      player_a_last: player_a_last,
-      player_b_first: player_b_first,
-      player_b_last: player_b_last
-    }
-
-    short_text = "#{player_a_last}-#{player_b_last}"
-
-    # register short form of team
-    @teams[short_text] = {
-      player_a_first: player_a_first,
-      player_a_last: player_a_last,
-      player_b_first: player_b_first,
-      player_b_last: player_b_last
-    }
-
-    # register longer (first and last name) form of team
-    @teams[text] = {
-      player_a_first: player_a_first,
-      player_a_last: player_a_last,
-      player_b_first: player_b_first,
-      player_b_last: player_b_last
-    }
-
-    @teams
-  end
-
-
-
+  KNOWN_HYPHEN_FIRST_NAMES = [
+    "Pierre-David"
+  ]
   def register_team_2(team_td)
     text = team_td.children.first.to_s.gsub(/\s/, " ")
     raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
@@ -378,8 +382,24 @@ class PbResultsParser
     player_b_first = clean_str chunks.pop
 
     remaining_chunks = chunks.join(',').split('-')
-    player_a_first = clean_str remaining_chunks.shift
-    player_b_last = clean_str remaining_chunks.join('-')
+
+    if remaining_chunks.size > 2
+      # This means either player a first has hyphens,
+      # Or player b last has hyphens
+      # clear up ambiguity by looking up exceptions (kinda hacky, yes)
+      ambiguous_chunk = remaining_chunks.join('-')
+      if KNOWN_HYPHEN_FIRST_NAMES.select{|exc| ambiguous_chunk.include?(exc) }.any?
+        binding.pry
+        player_b_last = clean_str remaining_chunks.pop
+        player_a_first = clean_str remaining_chunks.join('-')
+      else
+        player_a_first = clean_str remaining_chunks.shift
+        player_b_last = clean_str remaining_chunks.join('-')
+      end
+    else
+      player_a_first = clean_str remaining_chunks.shift
+      player_b_last = clean_str remaining_chunks.join('-')
+    end
 
     @teams ||= {}
 
@@ -425,6 +445,10 @@ class PbResultsParser
     }
 
     @teams
+  end
+
+  def open_tourney_file
+    `open #{@io.path}`
   end
 
   def index_of_td(td_element)
