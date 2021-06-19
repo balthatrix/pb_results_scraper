@@ -25,7 +25,7 @@ class PbResultsParser
     def self.results(io)
       parser = new(io)
 
-      parser.register_teams
+      parser.register_players
 
       scores = parser.all_td_with_score
 
@@ -36,35 +36,35 @@ class PbResultsParser
         # skip score being 0 - 0 for forfeit, etc...
         next if score_text.include?('0-0') || score_text.downcase.include?('withdrawal')
 
-        team_a_text = parser.find_team_a(s).children.first.to_s
-        team_a_hash = parser.teams[team_a_text.to_sym]
-        binding.pry if team_a_hash.nil?
+        player_a_text = parser.find_player_a(s).children.first.to_s
+        player_a_hash = parser.players[player_a_text.to_sym]
+        binding.pry if player_a_hash.nil?
 
-        team_b_text = parser.find_team_b(s).children.first.to_s
-        team_b_hash = parser.teams[team_b_text.to_sym]
-        binding.pry if team_b_hash.nil?
+        player_b_text = parser.find_player_b(s).children.first.to_s
+        player_b_hash = parser.players[player_b_text.to_sym]
+        binding.pry if player_b_hash.nil?
 
         winner_text = parser.winner(s).children.first.to_s
-        winner_hash = parser.teams[winner_text.to_sym]
+        winner_hash = parser.players[winner_text.to_sym]
         binding.pry if winner_hash.nil?
 
         winner_score_index = parser.winner_point_position_in_match(score_text)
         loser_score_index = parser.loser_point_position_in_match(score_text)
 
-        team_a_is_winner = winner_hash == team_a_hash
-        team_a_score_index = team_a_is_winner ? winner_score_index : loser_score_index
-        team_b_score_index = team_a_is_winner ? loser_score_index : winner_score_index
+        player_a_is_winner = winner_hash == player_a_hash
+        player_a_score_index = player_a_is_winner ? winner_score_index : loser_score_index
+        player_b_score_index = player_a_is_winner ? loser_score_index : winner_score_index
 
         games = parser.parsed_scores_from_raw(score_text)
-        team_a_scores = games.map{|g| g[team_a_score_index] }
-        team_b_scores = games.map{|g| g[team_b_score_index] }
+        player_a_scores = games.map{ |g| g[player_a_score_index] }
+        player_b_scores = games.map{ |g| g[player_b_score_index] }
 
         matches.push({
           raw_scores: score_text.gsub(/&nbsp;/, " "),
-          team_a: team_a_hash,
-          team_b: team_b_hash,
-          team_a_scores: team_a_scores,
-          team_b_scores: team_b_scores,
+          player_a: player_a_hash,
+          player_b: player_b_hash,
+          player_a_scores: player_a_scores,
+          player_b_scores: player_b_scores,
           winner: winner_hash,
           tournament_name: parser.tournament_name,
           event_name: parser.event_name,
@@ -95,19 +95,21 @@ class PbResultsParser
           "Tournament Name",
           "Event Name",
           "Event Date",
-          "Team A Player 1",
-          "Team A Player 2",
-          "Team B Player 1",
-          "Team B Player 2",
-          "Winning Team",
-          "Team A Points Game 1",
-          "Team B Points Game 1",
-          "Team A Points Game 2",
-          "Team B Points Game 2",
-          "Team A Points Game 3",
-          "Team B Points Game 3",
-          "Team A Points Game 4",
-          "Team B Points Game 4"
+          "Player A",
+          "Player B",
+          "Winning Player",
+          "Player A Points Game 1",
+          "Player B Points Game 1",
+          "Player A Points Game 2",
+          "Player B Points Game 2",
+          "Player A Points Game 3",
+          "Player B Points Game 3",
+          "Player A Points Game 4",
+          "Player B Points Game 4",
+          "Player A Points Game 5",
+          "Player B Points Game 5",
+          "Player A Points Game 6",
+          "Player B Points Game 6"
         ] unless cat_mode
 
         matches.each do |match|
@@ -122,20 +124,18 @@ class PbResultsParser
           row.push(match[:event_name])
           row.push(match[:event_date])
 
-          # team a
-          row.push("#{match[:team_a][:player_a_first]} #{match[:team_a][:player_a_last]}")
-          row.push("#{match[:team_a][:player_b_first]} #{match[:team_a][:player_b_last]}")
+          # player a
+          row.push("#{match[:player_a][:first]} #{match[:player_a][:last]}")
 
-          # team b
-          row.push("#{match[:team_b][:player_a_first]} #{match[:team_b][:player_a_last]}")
-          row.push("#{match[:team_b][:player_b_first]} #{match[:team_b][:player_b_last]}")
+          # player b
+          row.push("#{match[:player_b][:first]} #{match[:player_b][:last]}")
 
-          # winning team
-          row.push("#{match[:winner][:player_a_first]} #{match[:winner][:player_a_last]} and #{match[:winner][:player_b_first]} #{match[:winner][:player_b_last]}")
+          # winning player
+          row.push("#{match[:winner][:first]} #{match[:winner][:last]}")
 
-          match[:team_a_scores].each_with_index do |score, i|
+          match[:player_a_scores].each_with_index do |score, i|
             row.push(score)
-            row.push(match[:team_b_scores][i])
+            row.push(match[:player_b_scores][i])
           end
 
           csv << row
@@ -166,7 +166,7 @@ class PbResultsParser
       @event_date ||= @document.search("i").last.children.first.to_s.split(" ")[-2]
     end
 
-    def find_team_a(score_td)
+    def find_player_a(score_td)
       # the score td element might be contained within another table...
       # this handles that exception
       if td_siblings(score_td).size == 1
@@ -185,7 +185,7 @@ class PbResultsParser
       # scan tds upward to find the path of bracket based on bottom border style
       while above_td = td_children(tr_elem)[prev_index]
         if above_td.nil?
-          raise "Could not find team a in upward pathfinding in bracket for score: #{score_td}"
+          raise "Could not find player a in upward pathfinding in bracket for score: #{score_td}"
         end
 
         # found the bracket path node
@@ -200,14 +200,14 @@ class PbResultsParser
       while(!name_pattern_matches?(leftward_td.children.first.to_s))
         leftward_td = previous_td_elem(leftward_td)
         if leftward_td.nil?
-          raise "Could not find team a in leftward pathfinding in bracket for score: #{score_td}"
+          raise "Could not find player a in leftward pathfinding in bracket for score: #{score_td}"
         end
       end
 
       leftward_td
     end
 
-    def find_team_b(score_td)
+    def find_player_b(score_td)
       # the score td element might be contained within another table...
       # this handles that exception
       if td_siblings(score_td).size == 1
@@ -231,7 +231,7 @@ class PbResultsParser
         # scan tds downward to find the path of bracket based on bottom border style
         while below_td = td_children(tr_elem)[prev_index]
           if below_td.nil?
-            raise "Could not find team b in downward pathfinding in bracket for score: #{score_td}"
+            raise "Could not find player b in downward pathfinding in bracket for score: #{score_td}"
           end
 
           # found the bracket path node
@@ -247,7 +247,7 @@ class PbResultsParser
           leftward_td = previous_td_elem(leftward_td)
           if leftward_td.nil?
             binding.pry
-            raise "Could not find team b in leftward pathfinding in bracket for score: #{score_td}"
+            raise "Could not find player b in leftward pathfinding in bracket for score: #{score_td}"
           end
         end
 
@@ -288,17 +288,17 @@ class PbResultsParser
       end
     end
 
-    def all_td_with_long_form_teams
+    def all_td_with_long_form_players
       all_td_with_text.select do |noko_elem|
         text = noko_elem.children.first.to_s
         full_name_pattern_matches?(text)
       end
     end
 
-    def register_teams
-      team_tds = all_td_with_long_form_teams
+    def register_players
+      player_tds = all_td_with_long_form_players
 
-      team_tds.each{ |team_td| register_team_2(team_td) }
+      player_tds.each{ |player_td| register_player(player_td) }
     end
 
     # input: "11-9,11-7"
@@ -330,123 +330,32 @@ class PbResultsParser
 
     private
 
-    # def register_team(team_td)
-    #   text = team_td.children.first.to_s
-    #   raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
-    #   players = text.split('-')
-    #
-    #   player_a_first = clean_str players.first.split(',').last.gsub(/&nbsp;/, " ")
-    #   player_a_last = clean_str players.first.split(',').first.gsub(/&nbsp;/, " ")
-    #
-    #   player_b_first = clean_str players.last.split(',').last.gsub(/&nbsp;/, " ")
-    #   player_b_last = clean_str players.last.split(',').first.gsub(/&nbsp;/, " ")
-    #
-    #   @teams ||= {}
-    #
-    #   team = {
-    #     player_a_first: player_a_first,
-    #     player_a_last: player_a_last,
-    #     player_b_first: player_b_first,
-    #     player_b_last: player_b_last
-    #   }
-    #
-    #   short_text = "#{player_a_last}-#{player_b_last}"
-    #
-    #   # register short form of team
-    #   @teams[short_text] = {
-    #     player_a_first: player_a_first,
-    #     player_a_last: player_a_last,
-    #     player_b_first: player_b_first,
-    #     player_b_last: player_b_last
-    #   }
-    #
-    #   # register longer (first and last name) form of team
-    #   @teams[text] = {
-    #     player_a_first: player_a_first,
-    #     player_a_last: player_a_last,
-    #     player_b_first: player_b_first,
-    #     player_b_last: player_b_last
-    #   }
-    #
-    #   @teams
-    # end
-
-
     KNOWN_HYPHEN_FIRST_NAMES = [
       "Pierre-David"
     ]
-    def register_team_2(team_td)
-      text = team_td.children.first.to_s.gsub(/\s/, " ")
-      raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
+
+    def register_player(player_td)
+      text = player_td.children.first.to_s.gsub(/\s/, " ")
+      raise "shouldn't register player without first and last names! Team text doesn't match the pattern: #{text}" unless full_name_pattern_matches?(text)
       chunks = text.split(',')
 
-      player_a_last = clean_str chunks.shift
-      player_b_first = clean_str chunks.pop
+      player_first = chunks.last
+      player_last = chunks.first
 
-      remaining_chunks = chunks.join(',').split('-')
+      @players ||= {}
 
-      if remaining_chunks.size > 2
-        # This means either player a first has hyphens,
-        # Or player b last has hyphens
-        # clear up ambiguity by looking up exceptions (kinda hacky, yes)
-        ambiguous_chunk = remaining_chunks.join('-')
-        if KNOWN_HYPHEN_FIRST_NAMES.select{|exc| ambiguous_chunk.include?(exc) }.any?
-          binding.pry
-          player_b_last = clean_str remaining_chunks.pop
-          player_a_first = clean_str remaining_chunks.join('-')
-        else
-          player_a_first = clean_str remaining_chunks.shift
-          player_b_last = clean_str remaining_chunks.join('-')
-        end
-      else
-        player_a_first = clean_str remaining_chunks.shift
-        player_b_last = clean_str remaining_chunks.join('-')
-      end
-
-      @teams ||= {}
-
-      team = {
-        player_a_first: player_a_first,
-        player_a_last: player_a_last,
-        player_b_first: player_b_first,
-        player_b_last: player_b_last
-      }
-
-      short_text = "#{player_a_last}-#{player_b_last}"
-
-      # register short form of team
-      @teams[short_text] = {
-        player_a_first: player_a_first,
-        player_a_last: player_a_last,
-        player_b_first: player_b_first,
-        player_b_last: player_b_last
+      player = {
+        first: player_first,
+        last: player_last,
       }
 
       # register short form of team
-      @teams[short_text.to_sym] = {
-        player_a_first: player_a_first,
-        player_a_last: player_a_last,
-        player_b_first: player_b_first,
-        player_b_last: player_b_last
-      }
+      @players[text.to_sym] = player
 
       # register longer (first and last name) form of team
-      @teams[text] = {
-        player_a_first: player_a_first,
-        player_a_last: player_a_last,
-        player_b_first: player_b_first,
-        player_b_last: player_b_last
-      }
+      @players[text] = player
 
-      # register longer (first and last name) form of team
-      @teams[text.to_sym] = {
-        player_a_first: player_a_first,
-        player_a_last: player_a_last,
-        player_b_first: player_b_first,
-        player_b_last: player_b_last
-      }
-
-      @teams
+      @players
     end
 
     def open_tourney_file
@@ -474,7 +383,7 @@ class PbResultsParser
     end
 
     def name_pattern_matches?(text)
-      text.scan(/[a-zA-Z'\(\) \"\.]+[0-9]*\-[a-zA-Z'\(\) \"\.]+[0-9]*/).count > 0
+      text.scan(/[a-zA-Z'\(\) \"\.]+[0-9]*/).count > 0
     end
 
     def full_name_pattern_matches?(text)
