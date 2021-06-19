@@ -245,6 +245,7 @@ class PbResultsParser
       while(!name_pattern_matches?(leftward_td.children.first.to_s))
         leftward_td = previous_td_elem(leftward_td)
         if leftward_td.nil?
+          binding.pry
           raise "Could not find team b in leftward pathfinding in bracket for score: #{score_td}"
         end
       end
@@ -472,7 +473,7 @@ class PbResultsParser
   end
 
   def name_pattern_matches?(text)
-    text.scan(/[a-zA-Z'\(\) ]+[0-9]*\-[a-zA-Z'\(\) ]+[0-9]*/).count > 0
+    text.scan(/[a-zA-Z'\(\) \"\.]+[0-9]*\-[a-zA-Z'\(\) \"\.]+[0-9]*/).count > 0
   end
 
   def full_name_pattern_matches?(text)
