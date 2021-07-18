@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'pry'
 require 'csv'
+require_relative './pb_result_parser_base'
 
 # E.G. initialization:
 =begin
@@ -19,7 +20,7 @@ results = PbResultsParser.results(File.open("./test/fixture/winchester_country_c
 PbResultsParser.to_csv(File.open("./test/fixture/winchester_country_club_tourney.html"), "results")
 =end
 class PbResultsParser
-  class Singles
+  class Singles < Base
     attr_accessor :players
 
     def self.results(io)
@@ -120,7 +121,12 @@ class PbResultsParser
           puts "===="
 
           # heading info
-          row.push(match[:tournament_name])
+          if match[:tournament_name] == match[:event_name]
+            row.push(io.path)
+          else
+            row.push(match[:tournament_name])
+          end
+
           row.push(match[:event_name])
           row.push(match[:event_date])
 
@@ -146,24 +152,6 @@ class PbResultsParser
     def initialize(io)
       @io = io
       @document = Nokogiri::HTML(io)
-    end
-
-    def tournament_name
-      # first h3 in the doc,
-      # first text child of the h3. pretty brittle seemingly
-      @tournament_name ||= @document.search("h3").first.children.first.to_s
-    end
-
-    def event_name
-      # first h3 in the doc,
-      # last text child of the h3. pretty brittle seemingly
-      @event_name ||= @document.search("h3").first.children.last.to_s
-    end
-
-    def event_date
-      # last italic in the doc,
-      # last child, assuming the date in the certain pos. Pretty brittle
-      @event_date ||= @document.search("i").last.children.first.to_s.split(" ")[-2]
     end
 
     def find_player_a(score_td)
