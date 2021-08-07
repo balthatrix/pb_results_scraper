@@ -37,16 +37,17 @@ class PbResultsParser
         # skip score being 0 - 0 for forfeit, etc...
         next if score_text.include?('0-0') || score_text.downcase.include?('withdrawal') || score_text.downcase.include?('forfeit')
 
-        team_a_text = parser.find_team_a(s).children.first.to_s
-        team_a_hash = parser.teams[team_a_text.to_sym]
+        team_a_text = parser.find_team_a(s).children.first.to_s.gsub(/[\s\u00A0]/, "").to_sym
+        team_b_text = parser.find_team_b(s).children.first.to_s.gsub(/[\s\u00A0]/, "").to_sym
+        winner_text = parser.winner(s).children.first.to_s.gsub(/[\s\u00A0]/, "").to_sym
+
+        team_a_hash = parser.teams[team_a_text]
         binding.pry if team_a_hash.nil?
 
-        team_b_text = parser.find_team_b(s).children.first.to_s
-        team_b_hash = parser.teams[team_b_text.to_sym]
+        team_b_hash = parser.teams[team_b_text]
         binding.pry if team_b_hash.nil?
 
-        winner_text = parser.winner(s).children.first.to_s
-        winner_hash = parser.teams[winner_text.to_sym]
+        winner_hash = parser.teams[winner_text]
         binding.pry if winner_hash.nil?
 
         winner_score_index = parser.winner_point_position_in_match(score_text)
@@ -281,27 +282,35 @@ class PbResultsParser
     end
 
     def all_td_with_long_form_teams
-      result = all_td_with_text.select do |noko_elem|
+      all_td_with_text.select do |noko_elem|
         text = noko_elem.children.first.to_s
         full_name_pattern_matches?(text)
       end
+    end
 
-      return result unless result.empty?
-
+    def all_td_with_standard_form_teams
       all_td_with_text.select do |noko_elem|
         text = noko_elem.children.first.to_s
-        name_pattern_matches?(text)
+        name_pattern_matches?(text) && text.gsub(/[\s\u00A0]/, " ").count(" ") >= 2
       end
     end
 
     def register_teams
       team_tds = all_td_with_long_form_teams
 
+      team_reg_function = "register_team_military_form"
+      if team_tds.count <= 1
+        team_tds = all_td_with_standard_form_teams
+        team_reg_function = "register_team_standard_form"
+      end
+
+      #remove all whitespace and nbsp chars from strings
       team_texts = team_tds
-        .map{ |score_td| score_td.children.first.to_s.gsub(/\s/, " ") }
+        .map{ |score_td| score_td.children.first.to_s.gsub(/[\s\u00A0]/, " ") }
         .uniq
 
-      team_texts.each{ |team_td| register_team_2(team_td) }
+
+      team_texts.each{ |team_text| send(team_reg_function, team_text) }
     end
 
     # input: "11-9,11-7"
@@ -333,55 +342,15 @@ class PbResultsParser
 
     private
 
-    # def register_team(team_td)
-    #   text = team_td.children.first.to_s
-    #   raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
-    #   players = text.split('-')
-    #
-    #   player_a_first = clean_str players.first.split(',').last.gsub(/&nbsp;/, " ")
-    #   player_a_last = clean_str players.first.split(',').first.gsub(/&nbsp;/, " ")
-    #
-    #   player_b_first = clean_str players.last.split(',').last.gsub(/&nbsp;/, " ")
-    #   player_b_last = clean_str players.last.split(',').first.gsub(/&nbsp;/, " ")
-    #
-    #   @teams ||= {}
-    #
-    #   team = {
-    #     player_a_first: player_a_first,
-    #     player_a_last: player_a_last,
-    #     player_b_first: player_b_first,
-    #     player_b_last: player_b_last
-    #   }
-    #
-    #   short_text = "#{player_a_last}-#{player_b_last}"
-    #
-    #   # register short form of team
-    #   @teams[short_text] = {
-    #     player_a_first: player_a_first,
-    #     player_a_last: player_a_last,
-    #     player_b_first: player_b_first,
-    #     player_b_last: player_b_last
-    #   }
-    #
-    #   # register longer (first and last name) form of team
-    #   @teams[text] = {
-    #     player_a_first: player_a_first,
-    #     player_a_last: player_a_last,
-    #     player_b_first: player_b_first,
-    #     player_b_last: player_b_last
-    #   }
-    #
-    #   @teams
-    # end
-
-
     KNOWN_HYPHEN_FIRST_NAMES = [
       "Pierre-David",
       "Marie-Mediratta",
       "Tienr-X",
-      "O-sell"
+      "O-sell",
+      "Oona-lotta"
     ]
-    def register_team_2(text)
+
+    def register_team_military_form(text)
       @teams ||= {}
       return if @teams[text]
       # raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
@@ -426,17 +395,43 @@ class PbResultsParser
         player_b_first = STDIN.gets.chomp
       end
 
+      set_team_key(player_a_first, player_a_last, player_b_first, player_b_last)
+    end
 
+    def register_team_standard_form(text)
+      @teams ||= {}
+      return if @teams[text]
+      # raise "shouldn't register team without first and last names! Team text doesn't match the pattern: #{team}" unless full_name_pattern_matches?(text)
+      chunks = text.split('-')
 
-      team = {
-        player_a_first: player_a_first,
-        player_a_last: player_a_last,
-        player_b_first: player_b_first,
-        player_b_last: player_b_last
-      }
+      player_a = chunks.shift
+      player_b = chunks.pop
 
-      short_text = "#{player_a_last}-#{player_b_last}"
-      longer_text_b = "#{player_a_first} #{player_a_last}-#{player_b_first} #{player_b_last}"
+      player_a_first = player_a.split(' ').first
+      player_a_last  = player_a.split(' ')[1..-1].join(' ')
+
+      player_b_first = player_b.split(' ').first
+      player_b_last  = player_b.split(' ')[1..-1].join(' ')
+
+      set_team_key(player_a_first, player_a_last, player_b_first, player_b_last)
+    end
+
+    def set_team_key(
+        player_a_first,
+        player_a_last,
+        player_b_first,
+        player_b_last
+      )
+
+      key_cleanup_pattern       = Regexp.new("[\s\u00A0]")
+      key_cleanup_pattern_no_jr = Regexp.new(",Jr.|,Sr.")
+
+      short_text = "#{player_a_last}-#{player_b_last}".gsub(key_cleanup_pattern, "")
+      standard_form_text = "#{player_a_first} #{player_a_last}-#{player_b_first} #{player_b_last}".gsub(key_cleanup_pattern, "")
+      military_form_text = "#{player_a_last},#{player_a_first}-#{player_b_last},#{player_b_first}".gsub(key_cleanup_pattern, "")
+      short_text_2 = short_text.gsub(key_cleanup_pattern_no_jr, "")
+      standard_form_text_2 = standard_form_text.gsub(key_cleanup_pattern_no_jr, "")
+      military_form_text_2 = military_form_text.gsub(key_cleanup_pattern_no_jr, "")
 
       new_team = {
         player_a_first: player_a_first,
@@ -445,21 +440,23 @@ class PbResultsParser
         player_b_last: player_b_last
       }
 
-      # register short form of team
       @teams[short_text] = new_team
-
-      # register short form of team
       @teams[short_text.to_sym] = new_team
 
-      # register longer (first and last name) form of team
-      @teams[text] = new_team
+      @teams[short_text_2] = new_team
+      @teams[short_text_2.to_sym] = new_team
 
-      # register longer (first and last name) form of team
-      @teams[text.to_sym] = new_team
+      @teams[military_form_text] = new_team
+      @teams[military_form_text.to_sym] = new_team
 
-      @teams[longer_text_b] = new_team
+      @teams[standard_form_text] = new_team
+      @teams[standard_form_text.to_sym] = new_team
 
-      @teams[longer_text_b.to_sym] = new_team
+      @teams[military_form_text_2] = new_team
+      @teams[military_form_text_2.to_sym] = new_team
+
+      @teams[standard_form_text_2] = new_team
+      @teams[standard_form_text_2.to_sym] = new_team
 
       @teams
     end
@@ -489,7 +486,7 @@ class PbResultsParser
     end
 
     def name_pattern_matches?(text)
-      text.scan(/[a-zA-Z'\(\) \"\.]+[0-9]*\-[a-zA-Z'\(\) \"\.]+[0-9]*/).count > 0
+      text.scan(/[a-zA-Z'\(\) \"\.$]+[0-9]*\-[a-zA-Z'\(\) \"\.$]+[0-9]*/).count > 0
     end
 
     def full_name_pattern_matches?(text)
