@@ -37,9 +37,9 @@ class PbResultsParser
         # skip score being 0 - 0 for forfeit, etc...
         next if score_text.include?('0-0') || score_text.downcase.include?('withdrawal') || score_text.downcase.include?('forfeit')
 
-        team_a_text = parser.find_team_a(s).children.first.to_s.gsub(/[\s\u00A0]/, "").to_sym
-        team_b_text = parser.find_team_b(s).children.first.to_s.gsub(/[\s\u00A0]/, "").to_sym
-        winner_text = parser.winner(s).children.first.to_s.gsub(/[\s\u00A0]/, "").to_sym
+        team_a_text = parser.find_team_a(s).children.first.to_s.gsub(/[\s\u00A0’]/, "").to_sym
+        team_b_text = parser.find_team_b(s).children.first.to_s.gsub(/[\s\u00A0’]/, "").to_sym
+        winner_text = parser.winner(s).children.first.to_s.gsub(/[\s\u00A0’]/, "").to_sym
 
         team_a_hash = parser.teams[team_a_text]
         binding.pry if team_a_hash.nil?
@@ -347,7 +347,8 @@ class PbResultsParser
       "Marie-Mediratta",
       "Tienr-X",
       "O-sell",
-      "Oona-lotta"
+      "Oona-lotta",
+      "Ann-Marie"
     ]
 
     def register_team_military_form(text)
@@ -486,7 +487,7 @@ class PbResultsParser
     end
 
     def name_pattern_matches?(text)
-      text.scan(/[a-zA-Z'\(\) \"\.$]+[0-9]*\-[a-zA-Z'\(\) \"\.$]+[0-9]*/).count > 0
+      text.scan(/[a-zA-Z'’\(\) \"\.$]+[0-9]*\-[a-zA-Z'’\(\) \"\.$]+[0-9]*/).count > 0
     end
 
     def full_name_pattern_matches?(text)
